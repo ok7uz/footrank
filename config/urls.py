@@ -1,8 +1,15 @@
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+
+
+class HomeView(RedirectView):
+    url = 'ranking'
+
 
 urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('ranking', include('apps.ranking.urls')),
 ]
