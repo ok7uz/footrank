@@ -21,9 +21,9 @@ def run():
             country_code=team['rankingItem']['countryCode'],
             flag_url=team['rankingItem']['flag']['src'],
             current_rank=team['rankingItem']['rank'],
-            previous_rank=team['rankingItem']['previousRank'],
+            previous_rank=team['rankingItem']['rank'],
             current_points=team['rankingItem']['totalPoints'],
-            previous_points=team['previousPoints'],
+            previous_points=team['totalPoints'],
             confederation=team['tag']['text'],
         )
     print('Done')
