@@ -1,0 +1,4 @@
+@font-face {
+    font-family: 'Foot Font';
+    src: url({% static 'fonts/SofascoreSans-Regular.woff2' %}) format('woff2');
+}

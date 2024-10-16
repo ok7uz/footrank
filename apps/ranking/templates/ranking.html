@@ -1,0 +1,179 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+          rel="stylesheet">
+</head>
+<body class="bg-light container pt-4" style="font-family: 'Rubik', sans-serif; line-height: 1.1">
+
+    <!-- Navbar -->
+    <nav class="nav fixed-top text-white p-3" style="background: #014a7f">
+        <div class="container">
+            FootRank.com
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="col-lg-8 m-auto mt-5">
+
+        <table class="table table-responsive table-striped table-bordered border-dark-subtle table-hover" style="font-size: 0.95rem">
+            <thead>
+                <tr class="text-center">
+                    <td class="text-white py-3" style="background: #014a7f" colspan="2">Rank</td>
+                    <td class="text-white py-3" style="background: #014a7f" colspan="2">Country</td>
+                    <td class="text-white py-3" style="background: #014a7f" colspan="3">Points</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in teams %}
+                <tr>
+                    <td class="text-center align-middle col-1"
+                        style="font-size: 1.05rem; padding: 12px 0; {% if team.rank_difference != 0 %}font-weight: 600{% endif %}">
+                        {{ team.current_rank }}
+                    </td>
+                    <td class="py-1 align-middle text-center col-1" style="font-weight: 600">
+                        {% if team.rank_difference > 0 %}
+                            <span class="d-flex w-100 justify-content-center align-items-center" style="color: #008000">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.4082 5.40158L12.0082 4.00153L12.0011 4.00863L11.9942 4.00172L10.5942 5.40173L10.6011 5.40864L5.70109 10.3086C5.31448 10.6952 5.31448 11.322 5.70109 11.7087C6.08771 12.0953 6.71454 12.0953 7.10115 11.7087L11.0014 7.80845L11.0014 18.9988C11.0014 19.5511 11.4491 19.9988 12.0014 19.9988C12.5536 19.9988 13.0014 19.5511 13.0014 18.9988L13.0014 7.80894L16.9013 11.7089C17.2879 12.0955 17.9148 12.0955 18.3014 11.7089C18.688 11.3223 18.688 10.6955 18.3014 10.3089L13.4011 5.40868L13.4082 5.40158Z" fill="currentColor"></path></svg>
+                                <span class="d-flex align-items-center">{{ team.rank_difference }}</span>
+                            </span>
+                        {% elif team.rank_difference < 0 %}
+                            <span class="d-flex w-100 justify-content-center align-items-center" style="color: #df1c3c;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="
+                                        M13.4053 18.5987L12.0052 19.9988L11.9981 19.9917L11.9912 19.9986L10.5912 18.5986L10.5981
+                                        18.5917L5.69816 13.6917C5.31155 13.3051 5.31155 12.6783 5.69816 12.2916C6.08478 11.905
+                                        6.71161 11.905 7.09822 12.2916L10.9984 16.1918L10.9984 5.00153C10.9984 4.44924 11.4461
+                                        4.00153 11.9984 4.00153C12.5507 4.00153 12.9984 4.44924 12.9984 5.00153L12.9984 16.1914L16.8984
+                                        12.2914C17.285 11.9048 17.9118 11.9048 18.2984 12.2914C18.685 12.678 18.685 13.3048 18.2984
+                                        13.6914L13.3982 18.5916L13.4053 18.5987Z" fill="currentColor">
+                                    </path>
+                                </svg>
+                                <span class="d-flex align-items-center">{{ team.rank_difference | stringformat:"+d" | slice:"1:" }}</span>
+                            </span>
+                        {% else %}
+                            <span class="d-block" style="color: #008000">
+                                -
+                            </span>
+                        {% endif %}
+                    <td class="align-middle py-1 col-1 text-end border-end">
+                        <img src="{{ team.flag_url }}"
+                             alt="{{ team.name }}"
+                             class="border border-dark"
+                             style="width: 36px; height: 24px">
+                    </td>
+                    <td class="col-5 align-middle"
+                        style="{% if team.rank_difference != 0 and team.points_difference != 0 %}font-weight: 500{% endif %}">
+                        <span class="ms-2 align-items-center text-dark" style="font-size: 1rem">{{ team.name }}</span>
+                    </td>
+                    <td class="py-2 text-center col-2 align-middle"
+                        style="{% if team.points_difference != 0 %}font-weight: 500{% endif %}">
+                        {{ team.current_points | floatformat:2 }}
+                    </td>
+                    <td class="py-2 text-center col-2 align-middle"
+                        style="font-weight: 500">
+                        {% if team.points_difference > 0 %}
+                            <span style="color: #008000">+{{ team.points_difference | floatformat:2 }}</span>
+                        {% elif team.points_difference < 0 %}
+                            <span class="text-danger">{{ team.points_difference | floatformat:2 }}</span>
+                        {% endif %}
+                    </td>
+                    <td class="py-0 align-middle col-1">
+                        <button type="button"
+                                class="btn btn-sm py-0"
+                                data-bs-toggle="modal"
+                                data-bs-target="#{{ team.country_code }}"
+                                style="color: #014a7f">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg>
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    {% for team in teams %}
+        <!-- Modal -->
+                    <div class="modal fade" id="{{ team.country_code }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header bg-primary-subtle">
+                                    <img src="{{ team.flag_url }}" alt="{{ team.name }}" class="border border-dark" style="width: 36px; height: 24px">
+                                    <h1 class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {% regroup team.games by competition as games_by_competition %}
+
+                                    {% for competition, games in games_by_competition %}
+                                        <p style="color:  #014a7f">{{ competition.name }}</p>
+                                        <table class="table table-striped table-hover" style="font-size: 0.9rem; line-height: 1">
+                                            <tbody>
+                                            {% for game in games %}
+                                                <tr>
+                                                    <td class="align-middle py-0">
+                                                        {{ game.date | date:"d-m-Y" }}
+                                                    </td>
+                                                    <td class="align-middle"><img class="border border-dark" src="{{ game.home_team.flag_url }}" style="width: 30px"> </td>
+                                                    <td class="align-middle text-center">
+                                                        {{ game.home_team.country_code }}<br>
+                                                        {% if game.home_points_change > 0 %}
+                                                            <span class="text-success" style="font-size: 0.8rem">+{{ game.home_points_change | floatformat:2 }}</span>
+                                                        {% elif game.home_points_change < 0 %}
+                                                            <span class="text-danger" style="font-size: 0.8rem">{{ game.home_points_change | floatformat:2 }}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td class="align-middle">
+                                                        {{ game.home_goals }}
+                                                        -
+                                                        {{ game.away_goals }}
+                                                    </td>
+                                                    <td class="align-middle text-center">
+                                                        {{ game.away_team.country_code }}<br>
+                                                        {% if game.away_points_change > 0 %}
+                                                            <span class="text-success" style="font-size: 0.8rem">+{{ game.away_points_change | floatformat:2 }}</span>
+                                                        {% elif game.away_points_change < 0 %}
+                                                            <span class="text-danger" style="font-size: 0.8rem">{{ game.away_points_change | floatformat:2 }}</span>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td class="align-middle"><img class="border border-dark" src="{{ game.away_team.flag_url }}" style="width: 30px"></td>
+                                                </tr>
+
+                                            {% endfor %}
+
+                                            </tbody>
+                                        </table>
+                                    {% endfor %}
+                                {% if not team.games %}
+                                                    <p class="text-center mb-0">No games</p>
+                                            {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        {% endfor %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+  </body>
+</html>
