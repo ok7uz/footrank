@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 
 
@@ -93,8 +95,8 @@ class Game(models.Model):
         expected_home_win = 1 / (10 ** (-delta / 600) + 1)
         expected_away_win = 1 / (10 ** (delta / 600) + 1)
         win = 1 if self.home_goals > self.away_goals else 0 if self.home_goals < self.away_goals else 0.5
-        self.home_points_change = (win - expected_home_win) * self.competition.coefficient
-        self.away_points_change = ((1 - win) - expected_away_win) * self.competition.coefficient
+        self.home_points_change = (Decimal(win) - expected_home_win) * self.competition.coefficient
+        self.away_points_change = (Decimal(1 - win) - expected_away_win) * self.competition.coefficient
         self.home_team.current_points += self.home_points_change
         self.away_team.current_points += self.away_points_change
         self.home_team.save()
