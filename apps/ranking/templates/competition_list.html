@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-lg-8 m-auto mt-5">
+
+        <table class="table table-responsive table-striped table-bordered border-dark-subtle table-hover" style="font-size: 0.95rem">
+            <thead>
+                <tr class="text-center">
+                    <td class="text-white py-3" style="background: #014a7f">League</td>
+                    <td class="text-white py-3" style="background: #014a7f">Round</td>
+                    <td class="text-white py-3" style="background: #014a7f">Coefficient</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for competition in competitions %}
+                <tr onclick="location.href='{% url 'competition_update' competition.id %}'" style="cursor: pointer">
+                    <td class="col-5 align-middle text-center">
+                        {{ competition.league }}
+                    </td>
+                    <td class="py-2 text-center col-2 align-middle">
+                        {{ competition.round }}
+                    </td>
+                    <td class="py-2 text-center col-2 align-middle">
+                        {% if competition.coefficient %}{{ competition.coefficient }}{% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}

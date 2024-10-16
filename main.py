@@ -1,30 +1,51 @@
 import requests
+from decouple import config
+from django.db import transaction
+
+from apps.ranking.models import Game, Team, Competition, League
 
 
-url = 'https://inside.fifa.com/api/ranking-overview?locale=en&dateId=id14506'
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36',
-    'Accept': 'application/json, text/javascript, */*; q=0.01',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Referer': 'https://www.fifa.com/rankings',
-}
+def run(date='2024-10-15'):
+    headers = {
+        'x-rapidapi-host': "v3.football.api-sports.io",
+        'x-rapidapi-key': config('FOOTBALL_API_KEY')
+    }
 
+    response = requests.get(f"https://v3.football.api-sports.io/fixtures?date={date}", headers=headers)
+    data = response.json()['response']
 
-def run():
-    from apps.ranking.models import Team
-    response = requests.get(url, headers=headers)
-    print(response.text)
-    data = response.json()
-    for team in data['rankings']:
-        Team.objects.update_or_create(
-            name=team['rankingItem']['name'],
-            country_code=team['rankingItem']['countryCode'],
-            flag_url=team['rankingItem']['flag']['src'],
-            current_rank=team['rankingItem']['rank'],
-            previous_rank=team['rankingItem']['rank'],
-            current_points=team['rankingItem']['totalPoints'],
-            previous_points=team['totalPoints'],
-            confederation=team['tag']['text'],
-        )
-    print('Done')
+    for game in data:
+        with transaction.atomic():
+            date = game['fixture']['date'][:10]
+            status = game['fixture']['status']['short']
+            league = game['league']['name']
+            league_round = game['league']['round']
+            home_team_name = game['teams']['home']['name']
+            away_team_name = game['teams']['away']['name']
+            home_goals = game['goals']['home']
+            away_goals = game['goals']['away']
+            home_team_id = game['teams']['home']['id']
+            away_team_id = game['teams']['away']['id']
+
+            if Team.objects.filter(api_id=home_team_id).exists() and Team.objects.filter(api_id=away_team_id).exists() and status == 'FT':
+
+                home_team = Team.objects.get(name=home_team_name)
+                away_team = Team.objects.get(name=away_team_name)
+
+                league, _ = League.objects.get_or_create(name=league)
+                competition, _ = Competition.objects.get_or_create(league=league, round=league_round)
+                game, created = Game.objects.get_or_create(
+                    date=date,
+                    competition=competition,
+                    home_team=home_team,
+                    away_team=away_team,
+                    home_goals=home_goals,
+                    away_goals=away_goals
+                )
+                if created:
+                    delta = game.home_team.current_points - game.away_team.current_points
+                    we_home = 1 / (1 + 10 ** (-delta / 600) + 1)
+                    we_away = 1 / (1 + 10 ** (delta / 600) + 1)
+                    w = 1 if game.home_goals > game.away_goals else 0 if game.home_goals < game.away_goals else 0.5
+                    home_points_change = w - we_home
 

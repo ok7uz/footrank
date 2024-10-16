@@ -1,17 +1,17 @@
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, reverse_lazy
 from django.views.generic import RedirectView
 
 
 class HomeView(RedirectView):
-    url = 'ranking'
+    url = reverse_lazy('ranking')
 
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('ranking', include('apps.ranking.urls')),
+    path('ranking/', include('apps.ranking.urls')),
 ]
 
 if settings.DEBUG:

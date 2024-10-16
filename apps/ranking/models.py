@@ -1,7 +1,4 @@
-from decimal import Decimal
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 
 class Team(models.Model):
@@ -17,12 +14,13 @@ class Team(models.Model):
 
     name = models.CharField(max_length=255, unique=True)
     country_code = models.CharField(primary_key=True, max_length=3, unique=True)
-    flag_url = models.URLField()
+    flag_url = models.URLField(verbose_name='Flag URL')
     current_rank = models.PositiveIntegerField(null=True, db_index=True)
     previous_rank = models.PositiveIntegerField(null=True, db_index=True)
     current_points = models.DecimalField(max_digits=10, decimal_places=5)
     previous_points = models.DecimalField(max_digits=10, decimal_places=5)
     confederation = models.CharField(max_length=10, choices=CONFEDERATION_CHOICES, default='N/A', db_index=True)
+    api_id = models.PositiveIntegerField(unique=True, null=True, db_index=True, verbose_name='API ID')
 
     @property
     def rank_difference(self):
@@ -46,18 +44,32 @@ class Team(models.Model):
         return self.name
 
 
-class Competition(models.Model):
+class League(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    coefficient = models.PositiveIntegerField()
+
+    class Meta:
+        db_table = 'leagues'
+        verbose_name = 'League'
+        verbose_name_plural = 'Leagues'
+        ordering = ('name', )
+
+    def __str__(self):
+        return self.name
+
+
+class Competition(models.Model):
+    league = models.ForeignKey(League, on_delete=models.CASCADE)
+    round = models.CharField(max_length=255)
+    coefficient = models.PositiveIntegerField(null=True)
 
     class Meta:
         db_table = 'competitions'
         verbose_name = 'Competition'
         verbose_name_plural = 'Competitions'
-        ordering = ('name', )
+        ordering = ('-coefficient', 'league', 'round')
 
     def __str__(self):
-        return self.name
+        return f'{self.league}. {self.round}'
 
 
 class Game(models.Model):
@@ -74,45 +86,33 @@ class Game(models.Model):
     away_points_change = models.DecimalField(max_digits=10, decimal_places=5, default=0)
 
     date = models.DateField()
+    is_calculated = models.BooleanField(default=False)
+
+    def calculate(self) -> None:
+        delta = self.home_team.current_points - self.away_team.current_points
+        expected_home_win = 1 / (10 ** (-delta / 600) + 1)
+        expected_away_win = 1 / (10 ** (delta / 600) + 1)
+        win = 1 if self.home_goals > self.away_goals else 0 if self.home_goals < self.away_goals else 0.5
+        self.home_points_change = (win - expected_home_win) * self.competition.coefficient
+        self.away_points_change = ((1 - win) - expected_away_win) * self.competition.coefficient
+        self.home_team.current_points += self.home_points_change
+        self.away_team.current_points += self.away_points_change
+        self.home_team.save()
+        self.away_team.save()
+        self.is_calculated = True
+        self.save()
+
+        teams = Team.objects.filter(current_rank__isnull=False)
+        for index, team in enumerate(teams, start=1):
+            team.current_rank = index
+            team.save()
 
     class Meta:
         db_table = 'games'
         verbose_name = 'Game'
         verbose_name_plural = 'Games'
         ordering = ('-date', )
-
-    def save(
-        self,
-        *args,
-        force_insert=False,
-        force_update=False,
-        using=None,
-        update_fields=None,
-    ):
-        delta = self.home_team.current_points - self.away_team.current_points
-        home_we = 1 / (10 ** (-delta / 600) + 1)
-        away_we = 1 / (10 ** (delta / 600) + 1)
-        w = 1 if self.home_goals > self.away_goals else 0.5 if self.home_goals == self.away_goals else 0
-        home_points_change = self.competition.coefficient * (Decimal(w) - home_we)
-        away_points_change = self.competition.coefficient * (Decimal(1 - w) - away_we)
-        self.home_points_change = home_points_change
-        self.away_points_change = away_points_change
-
-        if not self.id:
-            self.home_team.current_points += home_points_change
-            self.away_team.current_points += away_points_change
-            self.home_team.save()
-            self.away_team.save()
-
-        return super().save(*args, force_insert, force_update, using, update_fields)
-
-
-@receiver(post_save, sender=Game)
-def update_team_ranking(sender, instance, created, **kwargs):
-    teams = Team.objects.filter(current_rank__isnull=False).order_by('-current_points')
-    for index, team in enumerate(teams):
-        team.current_rank = index + 1
-        team.save()
+        unique_together = ('home_team', 'away_team', 'date')
 
 
 class Period(models.Model):
