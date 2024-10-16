@@ -104,7 +104,7 @@ class Game(models.Model):
         self.is_calculated = True
         self.save()
 
-        teams = Team.objects.filter(current_rank__isnull=False)
+        teams = Team.objects.filter(current_rank__isnull=False).order_by('-current_points')
         for index, team in enumerate(teams, start=1):
             team.current_rank = index
             team.save()
