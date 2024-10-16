@@ -97,7 +97,7 @@ class NotCompletedGameView(ListView):
     context_object_name = 'games'
 
     def get_queryset(self):
-        return Game.objects.filter(is_calculated=False).order_by('date')
+        return Game.objects.filter(is_calculated=False).order_by('date', 'competition')
 
 
 def calculate_games(request, game_id):
