@@ -29,8 +29,8 @@ def run(date='2024-10-15'):
 
             if Team.objects.filter(api_id=home_team_id).exists() and Team.objects.filter(api_id=away_team_id).exists() and status == 'FT':
 
-                home_team = Team.objects.get(name=home_team_name)
-                away_team = Team.objects.get(name=away_team_name)
+                home_team = Team.objects.get(api_id=home_team_id)
+                away_team = Team.objects.get(api_id=away_team_id)
 
                 league, _ = League.objects.get_or_create(name=league)
                 competition, _ = Competition.objects.get_or_create(league=league, round=league_round)
