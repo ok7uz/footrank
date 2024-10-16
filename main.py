@@ -42,10 +42,4 @@ def run(date='2024-10-15'):
                     home_goals=home_goals,
                     away_goals=away_goals
                 )
-                if created:
-                    delta = game.home_team.current_points - game.away_team.current_points
-                    we_home = 1 / (1 + 10 ** (-delta / 600) + 1)
-                    we_away = 1 / (1 + 10 ** (delta / 600) + 1)
-                    w = 1 if game.home_goals > game.away_goals else 0 if game.home_goals < game.away_goals else 0.5
-                    home_points_change = w - we_home
 
