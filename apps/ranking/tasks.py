@@ -6,19 +6,17 @@ from decouple import config
 from .models import Competition, League, Game, Team
 
 
-FIXTURES_URL = "https://v3.football.api-sports.io/fixtures"
+FIXTURES_URL = "https://v3.football.api-sports.io/fixtures?date={}"
 
 
 @shared_task
 def fetch_matches(date=None):
     today_date = date or datetime.date.today().strftime("%Y-%m-%d")
     yesterday_date = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
-
     headers = {'x-apisports-key': config('FOOTBALL_API_KEY')}
     today_response = requests.get(FIXTURES_URL.format(today_date), headers=headers)
     yesterday_response = requests.get(FIXTURES_URL.format(yesterday_date), headers=headers)
     data = today_response.json()['response'] + yesterday_response.json()['response']
-
     for fixture in data:
         status = fixture['fixture']['status']['short']
         tournament = fixture['league']['name']
@@ -28,10 +26,8 @@ def fetch_matches(date=None):
         home_goals = fixture['goals']['home']
         away_goals = fixture['goals']['away']
         date = fixture['fixture']['date']
-
         home_team = Team.objects.filter(api_id=home_team_data['id']).first()
         away_team = Team.objects.filter(api_id=away_team_data['id']).first()
-
         if status == 'FT' and home_team and away_team:
             league, _ = League.objects.get_or_create(name=tournament)
             competition, _ = Competition.objects.get_or_create(league=league, round=tournament_round)
