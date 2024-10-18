@@ -12,15 +12,15 @@ class RankingView(ListView):
     context_object_name = 'teams'
 
     def get_queryset(self):
-        continent = self.request.GET.get('continent')
+        confederation = self.request.GET.get('confederation')
         queryset = Team.objects.filter(current_rank__isnull=False)
-        if continent:
-            queryset = queryset.filter(confederation=continent)
+        if confederation:
+            queryset = queryset.filter(confederation=confederation)
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['continents'] = Team.CONFEDERATION_CHOICES[:-1]
+        context['confederations'] = Team.CONFEDERATION_CHOICES[:-1]
         return context
 
 
@@ -30,7 +30,16 @@ class CountryListView(ListView, PermissionRequiredMixin):
     context_object_name = 'teams'
 
     def get_queryset(self):
-        return Team.objects.order_by('name')
+        confederation = self.request.GET.get('confederation')
+        queryset = Team.objects.order_by('name')
+        if confederation:
+            queryset = queryset.filter(confederation=confederation)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['confederations'] = Team.CONFEDERATION_CHOICES[:-1]
+        return context
 
 
 class CountryUpdateView(TemplateView, PermissionRequiredMixin):

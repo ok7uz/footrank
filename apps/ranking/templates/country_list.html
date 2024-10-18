@@ -4,6 +4,20 @@
     <div class="col-lg-8 m-auto mt-5">
     <p class="text-center fs-2">Countries</p>
         <hr>
+    <p class="text-center fs-6 py-3">
+            <a href="{% url 'country_list' %}"
+               class="text-decoration-none text-dark"
+               style="{% if not request.GET.confederation %}font-weight: 500; color: #014a7f !important;{% endif %}">
+                ALL
+            </a>
+            {% for confederation in confederations %}
+            <a href="{% url 'country_list' %}?confederation={{ confederation.0 }}"
+               class="ms-2 text-decoration-none text-dark"
+               style="{% if request.GET.confederation == confederation.0 %}font-weight: 500; color: #014a7f !important;{% endif %}">
+                {{ confederation.0 }}
+            </a>
+            {% endfor %}
+        </p>
 
         <table class="table table-responsive table-striped table-bordered border-dark-subtle table-hover" style="font-size: 0.95rem">
             <thead>
