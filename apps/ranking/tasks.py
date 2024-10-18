@@ -31,7 +31,7 @@ def fetch_matches(date=None):
         if status == 'FT' and home_team and away_team:
             league, _ = League.objects.get_or_create(name=tournament)
             competition, _ = Competition.objects.get_or_create(league=league, round=tournament_round)
-            Game.objects.create(
+            Game.objects.get_or_create(
                 competition=competition,
                 home_team=home_team,
                 away_team=away_team,
