@@ -4,6 +4,8 @@
 
 {% block content %}
     <div class="col-lg-6 mt-5">
+    <p class="text-center fs-2">Not Calculated Games</p>
+        <hr>
         {% regroup games by competition as games_by_competition %}
         {% for competition, games in games_by_competition %}
             <p style="color:  #014a7f">{{ competition }}</p>

@@ -13,9 +13,10 @@ class RankingView(ListView):
 
     def get_queryset(self):
         continent = self.request.GET.get('continent')
+        queryset = Team.objects.filter(current_rank__isnull=False)
         if continent:
-            return Team.objects.filter(current_rank__isnull=False, confederation=continent)
-        return Team.objects.filter(current_rank__isnull=False)
+            queryset = queryset.filter(confederation=continent)
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

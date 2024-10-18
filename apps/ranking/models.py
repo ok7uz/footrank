@@ -87,7 +87,7 @@ class Game(models.Model):
     home_points_change = models.DecimalField(max_digits=10, decimal_places=5, default=0)
     away_points_change = models.DecimalField(max_digits=10, decimal_places=5, default=0)
 
-    date = models.DateField()
+    date = models.DateTimeField()
     is_calculated = models.BooleanField(default=False)
 
     def calculate(self) -> None:
