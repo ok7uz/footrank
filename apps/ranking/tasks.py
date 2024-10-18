@@ -11,8 +11,8 @@ FIXTURES_URL = "https://v3.football.api-sports.io/fixtures"
 
 @shared_task
 def fetch_matches():
-    today_date = datetime.date.today().strftime("%m/%d/%Y")
-    yesterday_date = datetime.date.today() - datetime.timedelta(days=1)
+    today_date = datetime.date.today().strftime("%Y-%m-%d")
+    yesterday_date = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
     headers = {'x-apisports-key': config('FOOTBALL_API_KEY')}
     today_response = requests.get(FIXTURES_URL.format(today_date), headers=headers)
@@ -64,7 +64,7 @@ def calculate_matches_points():
 
 @shared_task
 def ranking():
-    teams = Team.objects.filter(current_rank__isnull=False).order_by('current_points')
+    teams = Team.objects.filter(current_rank__isnull=False).order_by('-current_points')
 
     for index, team in enumerate(teams, start=1):
         team.current_rank = index
