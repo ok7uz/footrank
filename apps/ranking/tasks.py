@@ -10,8 +10,8 @@ FIXTURES_URL = "https://v3.football.api-sports.io/fixtures"
 
 
 @shared_task
-def fetch_matches():
-    today_date = datetime.date.today().strftime("%Y-%m-%d")
+def fetch_matches(date=None):
+    today_date = date or datetime.date.today().strftime("%Y-%m-%d")
     yesterday_date = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
 
     headers = {'x-apisports-key': config('FOOTBALL_API_KEY')}
