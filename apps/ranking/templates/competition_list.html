@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    Competitions
+{% endblock %}
+
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
     <p class="text-center fs-2">Competitions</p>
@@ -15,7 +19,7 @@
             </thead>
             <tbody>
                 {% for competition in competitions %}
-                <tr onclick="location.href='{% url 'competition_update' competition.id %}'" style="cursor: pointer">
+                <tr {% if request.user.is_staff %}onclick="location.href='{% url 'competition_update' competition.id %}'" style="cursor: pointer"{% endif %}>
                     <td class="col-5 align-middle text-center">
                         {{ competition.league }}
                     </td>

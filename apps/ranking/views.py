@@ -1,9 +1,9 @@
-from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import ListView, TemplateView
 
 from apps.ranking.forms import TeamChangeForm, CompetitionChangeForm
 from apps.ranking.models import Team, Competition, Game
+from apps.ranking.permissions import StaffRequiredMixin
 
 
 class RankingView(ListView):
@@ -24,7 +24,7 @@ class RankingView(ListView):
         return context
 
 
-class CountryListView(ListView, PermissionRequiredMixin):
+class CountryListView(ListView):
     model = Team
     template_name = 'country_list.html'
     context_object_name = 'teams'
@@ -42,7 +42,7 @@ class CountryListView(ListView, PermissionRequiredMixin):
         return context
 
 
-class CountryUpdateView(TemplateView, PermissionRequiredMixin):
+class CountryUpdateView(StaffRequiredMixin, TemplateView):
     model = Team
     pk_url_kwarg = 'country_code'
     template_name = 'country_update.html'
@@ -67,7 +67,7 @@ class CountryUpdateView(TemplateView, PermissionRequiredMixin):
         return Team.objects.get(country_code=self.kwargs.get(self.pk_url_kwarg))
 
 
-class CompetitionListView(ListView, PermissionRequiredMixin):
+class CompetitionListView(ListView):
     model = Team
     template_name = 'competition_list.html'
     context_object_name = 'competitions'
@@ -76,7 +76,7 @@ class CompetitionListView(ListView, PermissionRequiredMixin):
         return Competition.objects.order_by('coefficient', 'league', 'round')
 
 
-class CompetitionUpdateView(TemplateView, PermissionRequiredMixin):
+class CompetitionUpdateView(StaffRequiredMixin, TemplateView):
     model = Team
     pk_url_kwarg = 'competition_id'
     template_name = 'competition_update.html'

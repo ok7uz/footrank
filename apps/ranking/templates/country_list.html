@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    Countries
+{% endblock %}
+
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
     <p class="text-center fs-2">Countries</p>
@@ -29,7 +33,7 @@
             </thead>
             <tbody>
                 {% for team in teams %}
-                <tr onclick="location.href='{% url 'country_update' team.country_code %}'" style="cursor: pointer">
+                <tr {% if request.user.is_staff %}onclick="location.href='{% url 'country_update' team.country_code %}'" style="cursor: pointer"{% endif %}>
                     <td class="align-middle py-1 col-1 text-end border-end">
                         <img src="{{ team.flag_url }}"
                              alt="{{ team.name }}"

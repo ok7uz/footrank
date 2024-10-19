@@ -2,6 +2,10 @@
 {% load crispy_forms_field %}
 {% load crispy_forms_filters %}
 
+{% block title %}
+    {{ form.instance.name }} - Update
+{% endblock %}
+
 {% block content %}
     <div class="col-lg-6 mt-5">
         <img id="img_preview" src="{{ team.flag_url }}" alt="{{ team.name }}" class="border border-dark" style="width: 42px; height: 28px">

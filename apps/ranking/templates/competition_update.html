@@ -2,11 +2,12 @@
 {% load crispy_forms_field %}
 {% load crispy_forms_filters %}
 
+{% block title %}
+    {{ form.instance.league }}. {{ form.instance.round }}
+{% endblock %}
+
 {% block content %}
     <div class="col-lg-6 mt-5">
-        <img id="img_preview" src="{{ team.flag_url }}" alt="{{ team.name }}" class="border border-dark" style="width: 42px; height: 28px">
-        <span class="modal-title fs-5 ms-3 fw-normal align-middle" id="name_preview">{{ team.name }}</span>
-        <hr>
         {{ form.error_messages }}
     <form class="mt-3" method="post">
         {% csrf_token %}
