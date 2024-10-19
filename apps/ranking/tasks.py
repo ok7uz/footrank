@@ -49,6 +49,7 @@ def calculate_matches_points():
 
         if tournament.coefficient:
             game.home_points_change, game.away_points_change = calculate_points_change(game)
+            game.is_calculated = True
             game.save()
 
             game.home_team.current_points += game.home_points_change
