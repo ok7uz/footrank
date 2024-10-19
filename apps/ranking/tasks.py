@@ -48,8 +48,7 @@ def calculate_matches_points():
         tournament = game.competition
 
         if tournament.coefficient:
-            game.home_points_change = calculate_points_change(game)
-            game.away_points_change = calculate_points_change(game)
+            game.home_points_change, game.away_points_change = calculate_points_change(game)
             game.save()
 
             game.home_team.current_points += game.home_points_change
@@ -69,6 +68,11 @@ def ranking():
 
 def calculate_points_change(game: Game):
     delta = game.home_team.current_points - game.away_team.current_points
-    win = 1 if game.home_goals > game.away_goals else 0 if game.home_goals < game.away_goals else 0.5
-    expected_win = 1 / (10 ** (- delta / 600) + 1)
-    return game.competition.coefficient * (win - expected_win)
+    win_home = 1 if game.home_goals > game.away_goals else 0 if game.home_goals < game.away_goals else 0.5
+    win_away = 1 - win_home
+    expected_win_home = 1 / (10 ** (- delta / 600) + 1)
+    expected_win_away = 1 / (10 ** (delta / 600) + 1)
+    return (
+        game.competition.coefficient * (win_home - expected_win_home),
+        game.competition.coefficient * (win_away - expected_win_away)
+    )
