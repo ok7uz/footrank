@@ -20,14 +20,14 @@
             <p class="pt-3 text-center mb-1" style="color:  #014a7f">{{ competition }}</p>
             <p class="text-center text-opacity-75">{{ games.0.date | date:"M d, Y" }}</p>
             <hr>
-            <table class="table table-responsive table-striped table-hover" style="font-size: 0.9rem; line-height: 1">
+            <table class="table table-responsive table-striped table-hover border border-dark-subtle" style="font-size: 0.9rem; line-height: 1">
                 <tbody>
                 {% for game in games %}
                     <tr>
-                        <td class="align-middle py-0 text-center col-2">
+                        <td class="align-middle py-0 text-center col-2 border-end border-dark-subtle">
                             <span class="text-d">{{ game.date | date:"H:i" }}</span>
                         </td>
-                        <td class="align-middle col-1 py-0">
+                        <td class="align-middle col-1 py-0 ps-2">
                             <img class="border border-dark"
                                  src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
@@ -54,7 +54,7 @@
                                 <span class="text-danger" style="font-size: 0.8rem">{{ game.away_points_change | floatformat:2 }}</span>
                             {% endif %}
                         </td>
-                        <td class="align-middle col-1 py-0">
+                        <td class="align-middle col-1 py-0 pe-2">
                             <img class="border border-dark"
                                  src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
@@ -76,7 +76,7 @@
             <p class="text-center mb-0">No games</p>
         {% endif %}
     </div>
-        <div class="col-lg-6 ps-5 bg-white">
+        <div class="col-lg-6 ps-5">
     <p class="text-center fs-5">Fixtures</p>
         <hr>
         {% regroup games.fixtures by competition as games_by_competition %}
@@ -84,14 +84,14 @@
             <p class="pt-3 text-center mb-1" style="color:  #014a7f">{{ competition }}</p>
             <p class="text-center text-opacity-75">{{ games.0.date | date:"M d, Y" }}</p>
             <hr>
-            <table class="table table-responsive table-striped table-hover" style="font-size: 0.9rem; line-height: 1">
+            <table class="table table-responsive table-striped table-hover border border-dark-subtle" style="font-size: 0.9rem; line-height: 1">
                 <tbody>
                 {% for game in games %}
                     <tr>
-                        <td class="align-middle py-0 text-center col-2">
+                        <td class="align-middle py-0 text-center col-2 border-end border-dark-subtle">
                             <span class="text-d">{{ game.date | date:"H:i" }}</span>
                         </td>
-                        <td class="align-middle col-1 py-0">
+                        <td class="align-middle col-1 py-0 ps-2">
                             <img class="border border-dark"
                                  src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
@@ -118,7 +118,7 @@
                                 <span class="text-danger" style="font-size: 0.8rem">{{ game.away_points_change | floatformat:2 }}</span>
                             {% endif %}
                         </td>
-                        <td class="align-middle col-1 py-0">
+                        <td class="align-middle col-1 py-0 pe-2">
                             <img class="border border-dark"
                                  src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
