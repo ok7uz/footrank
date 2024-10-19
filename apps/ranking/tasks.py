@@ -1,5 +1,6 @@
 import datetime
 import requests
+from decimal import Decimal
 from celery import shared_task
 from decouple import config
 
@@ -74,6 +75,6 @@ def calculate_points_change(game: Game):
     expected_win_home = 1 / (10 ** (- delta / 600) + 1)
     expected_win_away = 1 / (10 ** (delta / 600) + 1)
     return (
-        game.competition.coefficient * (win_home - expected_win_home),
-        game.competition.coefficient * (win_away - expected_win_away)
+        game.competition.coefficient * (Decimal(win_home) - expected_win_home),
+        game.competition.coefficient * (Decimal(win_away) - expected_win_away)
     )
