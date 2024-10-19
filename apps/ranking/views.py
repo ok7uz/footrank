@@ -12,6 +12,7 @@ class RankingView(ListView):
     model = Team
     template_name = 'ranking.html'
     context_object_name = 'teams'
+    paginate_by = 100
 
     def get_queryset(self):
         confederation = self.request.GET.get('confederation')
@@ -30,6 +31,7 @@ class CountryListView(ListView):
     model = Team
     template_name = 'country_list.html'
     context_object_name = 'teams'
+    paginate_by = 100
 
     def get_queryset(self):
         confederation = self.request.GET.get('confederation')

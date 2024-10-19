@@ -161,4 +161,10 @@
                         </div>
                     </div>
         {% endfor %}
+    <!-- Paginator -->
+    <div class="text-center mb-4">
+        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #014a7f; color: #014a7f; {% if not request.GET.page %}background: #014a7f; color: white;{% endif %}">1</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '2' %}background: #014a7f; color: white;{% endif %}">2</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '3' %}background: #014a7f; color: white;{% endif %}">3</a>
+    </div>
 {% endblock %}
