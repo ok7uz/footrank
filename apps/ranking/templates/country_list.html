@@ -4,6 +4,10 @@
     Countries
 {% endblock %}
 
+{% block og-title %}Countries{% endblock %}
+{% block og-description %}Explore the FIFA Men's Rankings of national football teams across the world. Discover where your country stands, and see how teams rank based on performance in international competitions.{% endblock %}
+{% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
+
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
     <p class="text-center fs-2">Countries</p>

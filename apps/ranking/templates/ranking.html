@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    FIFA Ranking LIVE
+    FIFA Men's Football Rankings - Latest National Team Standings
 {% endblock %}
+
+{% block og-title %}FIFA Men's Football Rankings - Latest National Team Standings{% endblock %}
+{% block og-description %}Check out the latest FIFA Men's Rankings to see where national football teams stand. Get real-time updates on rankings based on international competitions and match results.{% endblock %}
+{% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
