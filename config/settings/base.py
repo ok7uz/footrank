@@ -102,12 +102,16 @@ CELERY_BEAT_SCHEDULE = {
         'task': 'apps.ranking.tasks.fetch_matches',
         'schedule': crontab(minute='0', hour='*/2'),
     },
+    'fetch-fixtures': {
+        'task': 'apps.ranking.tasks.fetch_fixtures',
+        'schedule': crontab(minute='10', hour='*/2'),
+    },
     'calculate-matches-points': {
         'task': 'apps.ranking.tasks.calculate_matches_points',
         'schedule': crontab(minute='20', hour='*/2'),
     },
     'ranking': {
         'task': 'apps.ranking.tasks.ranking',
-        'schedule': crontab(minute='40', hour='*/2'),
+        'schedule': crontab(minute='30', hour='*/2'),
     }
 }

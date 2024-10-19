@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import ListView, TemplateView
 
@@ -107,12 +109,20 @@ class NotCompletedGameView(ListView):
     context_object_name = 'games'
 
     def get_queryset(self):
-        return Game.objects.all().order_by(
-            'date__year',
-            'date__month',
-            'date__day',
-            'competition'
-        )
+        return {
+            'past_games': Game.objects.filter(date__lt=datetime.now()).order_by(
+                'date__year',
+                'date__month',
+                'date__day',
+                'competition'
+            ),
+            'fixtures': Game.objects.filter(date__gt=datetime.now()).order_by(
+                'date__year',
+                'date__month',
+                'date__day',
+                'competition'
+            )
+        }
 
 
 def calculate_games(request, game_id):
