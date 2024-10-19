@@ -73,7 +73,7 @@
                         <button type="button"
                                 class="btn btn-sm py-0"
                                 data-bs-toggle="modal"
-                                data-bs-target="#{{ team.country_code }}" 
+                                data-bs-target="#{{ team.country_code }}"
                                 aria-label="Show country info"
                                 style="color: #014a7f">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
@@ -93,7 +93,11 @@
                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header bg-primary-subtle">
-                                    <img src="{{ team.flag_url }}" alt="{{ team.name }}" class="border border-dark" style="width: 36px; height: 24px">
+                                    <img src="{{ team.flag_url }}"
+                                         alt="{{ team.name }}"
+                                         class="border border-dark"
+                                         loading="lazy"
+                                         style="width: 36px; height: 24px">
                                     <h1 class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
@@ -109,7 +113,12 @@
                                                     <td class="align-middle py-0">
                                                         {{ game.date | date:"d-m-Y" }}
                                                     </td>
-                                                    <td class="align-middle"><img class="border border-dark" src="{{ game.home_team.flag_url }}" style="width: 30px"> </td>
+                                                    <td class="align-middle">
+                                                        <img class="border border-dark"
+                                                             src="{{ game.home_team.flag_url }}"
+                                                             loading="lazy"
+                                                             style="width: 30px">
+                                                    </td>
                                                     <td class="align-middle text-center">
                                                         {{ game.home_team.country_code }}<br>
                                                         {% if game.home_points_change > 0 %}
@@ -131,7 +140,12 @@
                                                             <span class="text-danger" style="font-size: 0.8rem">{{ game.away_points_change | floatformat:2 }}</span>
                                                         {% endif %}
                                                     </td>
-                                                    <td class="align-middle"><img class="border border-dark" src="{{ game.away_team.flag_url }}" style="width: 30px"></td>
+                                                    <td class="align-middle">
+                                                        <img class="border border-dark"
+                                                             src="{{ game.away_team.flag_url }}"
+                                                             loading="lazy"
+                                                             style="width: 30px">
+                                                    </td>
                                                 </tr>
 
                                             {% endfor %}

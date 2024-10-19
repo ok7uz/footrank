@@ -13,7 +13,7 @@ class RankingView(ListView):
 
     def get_queryset(self):
         confederation = self.request.GET.get('confederation')
-        queryset = Team.objects.filter(current_rank__isnull=False)
+        queryset = Team.objects.filter(current_rank__isnull=False).prefetch_related('home_games', 'away_games')
         if confederation:
             queryset = queryset.filter(confederation=confederation)
         return queryset
