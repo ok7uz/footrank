@@ -25,34 +25,39 @@
             {% endfor %}
         </p>
 
-        <table class="table table-responsive table-striped table-bordered border-dark-subtle table-hover" style="font-size: 0.95rem">
+        <table class="table table-responsive table-hover table-striped"
+               style="font-size: 0.95rem;">
             <thead>
                 <tr class="text-center">
-                    <td class="text-white py-3" style="background: #014a7f">Rank</td>
-                    <td class="text-white py-3" style="background: #014a7f" colspan="2">Country</td>
-                    <td class="text-white py-3" style="background: #014a7f" colspan="3">Points</td>
+                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="2">Rank</td>
+                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="2">Country</td>
+                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="3">Points</td>
                 </tr>
             </thead>
             <tbody>
                 {% for team in teams %}
                 <tr>
-                    <td class="text-center align-middle col-2"
-                        style="font-size: 1.05rem; padding: 6px 0; font-weight: 500; position: relative;">
+                    <td class="text-center align-middle col-1 py-0 ps-3">
+                        <span style="display: block; color: black; font-weight: 500; background: #EEEEFF; border: 1px solid #318CE7; border-radius: 20px; width: 40px !important; padding: 3px 5px">
                         {{ team.current_rank }}
-                        {% if team.rank_difference > 0 %}
-                            <span class="rounded" style="background: #008000; font-weight: 400; color: white; line-height: 1; font-size: 14px; padding: 2px 6px; position: absolute; right: 27%; top: 50%; transform: translate(50%, -60%)">
-                                <span class="align-items-center small">{{ team.rank_difference }}</span>
-                            </span>
+                        </span>
+                    </td>
+                    <td class="col-1 align-middle">
+                {% if team.rank_difference > 0 %}
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference }} 🡩
+                                </span>
                         {% elif team.rank_difference < 0 %}
-                            <span class="rounded" style="background: #df1c3c; font-weight: 400; color: white; border: #df1c3c 1px solid; line-height: 1; font-size: 14px; padding: 2px 6px; position: absolute; right: 27%; top: 50%; transform: translate(50%, -60%)">
-                                <span class="align-items-center small">{{ team.rank_difference | stringformat:"d" | slice:"1:" }}</span>
-                            </span>
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference | stringformat:"d" | slice:"1:" }} 🡫
+                                </span>
                         {% endif %}
+                    </td>
                     <td class="align-middle py-1 col-1 text-end border-end">
                         <img src="{{ team.flag_url }}"
                              alt="{{ team.name }}"
                              class="border border-dark"
-                             style="width: 36px; height: 24px"
+                             style="width: 36px; height: 24px; background: #318CE7"
                              loading="lazy">
                     </td>
                     <td class="col-5 align-middle">
@@ -62,23 +67,25 @@
                         style="{% if team.points_difference != 0 %}font-weight: 400{% endif %}">
                         {{ team.current_points | floatformat:2 }}
                     </td>
-                    <td class="py-1 text-center col-2 align-middle">
+                    <td class="py-1  col-2 align-middle">
                         {% if team.points_difference > 0 %}
-                            <span style="color: #008000">+{{ team.points_difference | floatformat:2 }}</span>
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                +{{ team.points_difference | floatformat:2 }}
+                                </span>
                         {% elif team.points_difference < 0 %}
-                            <span class="text-danger">{{ team.points_difference | floatformat:2 }}</span>
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                {{ team.points_difference | floatformat:2 }}
+                            </span>
                         {% endif %}
                     </td>
-                    <td class="py-0 align-middle col-1">
+                    <td class="py-0 align-middle col-1 pe-3">
                         <button type="button"
                                 class="btn btn-sm py-0"
                                 data-bs-toggle="modal"
                                 data-bs-target="#{{ team.country_code }}"
                                 aria-label="Show country info"
-                                style="color: #014a7f">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-</svg>
+                                style="font-size: 1.05rem; color: black; font-weight: 500; background: #EEEEFF; border: 1px solid #318CE7; border-radius: 50%; line-height: 1; height: 22px; width: 22px">
+                            i
                         </button>
                     </td>
                 </tr>
@@ -115,9 +122,7 @@
                                                     </td>
                                                     <td class="align-middle">
                                                         <img class="border border-dark"
-                                                             src="{{ game.home_team.flag_url }}"
-                                                             loading="lazy"
-                                                             style="width: 30px">
+                                                             src="{{ game.home_team.flag_url }}" style="width: 30px">
                                                     </td>
                                                     <td class="align-middle text-center">
                                                         {{ game.home_team.country_code }}<br>
@@ -140,12 +145,7 @@
                                                             <span class="text-danger" style="font-size: 0.8rem">{{ game.away_points_change | floatformat:2 }}</span>
                                                         {% endif %}
                                                     </td>
-                                                    <td class="align-middle">
-                                                        <img class="border border-dark"
-                                                             src="{{ game.away_team.flag_url }}"
-                                                             loading="lazy"
-                                                             style="width: 30px">
-                                                    </td>
+                                                    <td class="align-middle"><img class="border border-dark" src="{{ game.away_team.flag_url }}" style="width: 30px"></td>
                                                 </tr>
 
                                             {% endfor %}
@@ -161,10 +161,4 @@
                         </div>
                     </div>
         {% endfor %}
-    <!-- Paginator -->
-    <div class="text-center mb-4">
-        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #014a7f; color: #014a7f; {% if not request.GET.page %}background: #014a7f; color: white;{% endif %}">1</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '2' %}background: #014a7f; color: white;{% endif %}">2</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '3' %}background: #014a7f; color: white;{% endif %}">3</a>
-    </div>
 {% endblock %}
