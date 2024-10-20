@@ -8,73 +8,84 @@
 {% block og-description %}Check out the latest FIFA Men's Rankings to see where national football teams stand. Get real-time updates on rankings based on international competitions and match results.{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
-{% block content %}<style>
-    /* Mobil qurilmalar uchun media query */
-    @media (max-width: 768px) {
-        .container {
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-
-        table {
-            font-size: 0.85rem;
-        }
-
-        .table thead tr td {
-            padding: 0.5rem;
-        }
-
-        .table tbody tr td {
-            padding: 0.3rem;
-        }
-
-        .modal-dialog {
-            max-width: 90vw;
-        }
-
-        .col-lg-8 {
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        /* Filter knopkalarini tartibga solish */
-        .nav a {
-            font-size: 0.9rem;
-            padding: 0.5rem;
-        }
-
-        /* Confederation knopkalarining kengligi */
-        .confederation-filter a {
-            width: 80px;
-            font-size: 0.8rem;
-        }
-
-        /* Jadvaldagi rangli knopkalarning minimal kengligi */
-        td span {
-            font-size: 0.75rem;
-            padding: 2px 4px;
-        }
-
-        .table img {
-            width: 24px;
-            height: 16px;
-        }
-
-        /* i (information) knopka hajmi */
-        .btn {
-            height: 18px;
-            width: 18px;
-            font-size: 0.85rem;
-        }
-
-        /* Jadvaldagi rank va points ustunlarini moslashtirish */
-        td {
-            font-size: 0.9rem;
-        }
+{% block content %}
+    <style>
+  @media (max-width: 768px) {
+    /* Asosiy konteyner */
+    .col-lg-8 {
+      padding: 0 !important;
     }
+
+    /* Konfederatsiya filtrlari */
+    .py-3 {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+    .py-3 a {
+      margin: 2px !important;
+      font-size: 0.8rem !important;
+      padding: 2px 4px !important;
+    }
+
+    /* Jadval */
+    .table {
+      font-size: 0.9rem !important;
+    }
+    .table td {
+      padding: 0.3rem !important;
+    }
+
+    /* Rank ustuni */
+    .table td:first-child {
+      padding-left: 0 !important;
+      width: 50px !important;
+    }
+    .table td:first-child span {
+      font-size: 0.8rem !important;
+      padding: 2px 4px !important;
+    }
+
+    /* Bayroq rasmlari */
+    .table td:nth-child(3) img {
+      width: 24px !important;
+      height: 16px !important;
+    }
+
+    /* Mamlakat nomi */
+    .table td:nth-child(4) span {
+      font-size: 0.85rem !important;
+    }
+
+    /* Ochkolar ustuni */
+    .table td:nth-child(5),
+    .table td:nth-child(6) {
+      font-size: 0.8rem !important;
+    }
+
+    /* Info tugmasi */
+    .table td:last-child {
+      padding-right: 0 !important;
+    }
+    .table td:last-child button {
+      font-size: 0.8rem !important;
+      padding: 0 !important;
+      width: 18px !important;
+      height: 18px !important;
+    }
+
+    /* Paginator */
+    .text-center.mb-4 {
+      margin-top: 1rem !important;
+    }
+    .text-center.mb-4 a {
+      font-size: 0.9rem !important;
+      padding: 2px 6px !important;
+    }
+  }
 </style>
 
-    
+
     <div class="col-lg-8 m-auto mt-5">
         <p class="text-center fs-6 py-3">
             <a class="mx-1" href="{% url 'ranking' %}"
@@ -120,11 +131,13 @@
                         <img src="{{ team.flag_url }}"
                              alt="{{ team.name }}"
                              class=""
-                             style="width: 36px; border: 1px solid black; height: 24px; background: #c5aa6a; border-radius: 3px"
+                             style="width: 36px; height: 24px; border: 1px solid black; background: #c5aa6a; border-radius: 3px"
                              loading="lazy">
                     </td>
                     <td class="col-5 align-middle">
-                        <span class="ms-2 align-items-center text-dark" style="font-size: 1rem">{{ team.name }}</span>
+                        <span class="ms-2 align-items-center text-dark" style="font-size: 1rem">
+                            {{ team.name }}
+                        </span>
                     </td>
                     <td class="py-1 text-center col-2 align-middle"
                         style="{% if team.points_difference != 0 %}font-weight: 400{% endif %}">
