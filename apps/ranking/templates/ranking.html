@@ -11,12 +11,12 @@
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
         <p class="text-center fs-6 py-3">
-            <a href="{% url 'ranking' %}"
+            <a class="mx-1" href="{% url 'ranking' %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if not request.GET.confederation %}background: #c5aa6a !important; {% endif %}">
                             ALL
                         </a>
             {% for confederation in confederations %}
-                <a class="ms-2" href="{% url 'ranking' %}?confederation={{ confederation.0 }}"
+                <a class="mx-1" href="{% url 'ranking' %}?confederation={{ confederation.0 }}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if request.GET.confederation == confederation.0 %}background: #c5aa6a !important;{% endif %}">
                             {{ confederation.0 }}
                         </a>
@@ -165,4 +165,10 @@
                         </div>
                     </div>
         {% endfor %}
+        <!-- Paginator -->
+    <div class="text-center mb-4">
+        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #c5aa6a; color: black; {% if not request.GET.page %}background: #c5aa6a;{% endif %}">1</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #c5aa6a; color: black; {% if request.GET.page == '2' %}background: #c5aa6a;{% endif %}">2</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #c5aa6a; color: black; {% if request.GET.page == '3' %}background: #c5aa6a;{% endif %}">3</a>
+    </div>
 {% endblock %}
