@@ -12,37 +12,34 @@
     <div class="col-lg-8 m-auto mt-5">
         <p class="text-center fs-6 py-3">
             <a href="{% url 'ranking' %}"
-               class="text-decoration-none text-dark"
-               style="{% if not request.GET.confederation %}font-weight: 500; color: #014a7f !important;{% endif %}">
-                ALL
-            </a>
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if not request.GET.confederation %}background: #c5aa6a !important; {% endif %}">
+                            ALL
+                        </a>
             {% for confederation in confederations %}
-            <a href="{% url 'ranking' %}?confederation={{ confederation.0 }}"
-               class="ms-2 text-decoration-none text-dark"
-               style="{% if request.GET.confederation == confederation.0 %}font-weight: 500; color: #014a7f !important;{% endif %}">
-                {{ confederation.0 }}
-            </a>
+                <a class="ms-2" href="{% url 'ranking' %}?confederation={{ confederation.0 }}"
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if request.GET.confederation == confederation.0 %}background: #c5aa6a !important;{% endif %}">
+                            {{ confederation.0 }}
+                        </a>
             {% endfor %}
         </p>
 
-        <table class="table table-responsive table-hover table-striped"
-               style="font-size: 0.95rem;">
+        <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center">
-                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="2">Rank</td>
-                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="2">Country</td>
-                    <td class="text-white py-3" style="background: #318CE7; border: 1px solid white" colspan="3">Points</td>
+                    <td class="text-black py-3" style="background: #c5aa6a; border: 1px solid white" colspan="2">Rank</td>
+                    <td class="text-dark py-3" style="background: #c5aa6a; border: 1px solid white" colspan="2">Country</td>
+                    <td class="text-dark py-3" style="background: #c5aa6a; border: 1px solid white" colspan="3">Points</td>
                 </tr>
             </thead>
             <tbody>
                 {% for team in teams %}
                 <tr>
                     <td class="text-center align-middle col-1 py-0 ps-3">
-                        <span style="display: block; color: black; font-weight: 500; background: #EEEEFF; border: 1px solid #318CE7; border-radius: 20px; width: 40px !important; padding: 3px 5px">
+                        <span style="display: block; color: black; font-weight: 500; background: #FFFFFA; border: 2px solid #c5aa6a; border-radius: 10px; width: 40px !important; padding: 3px 5px">
                         {{ team.current_rank }}
                         </span>
                     </td>
-                    <td class="col-1 align-middle">
+                    <td class="col-1 align-middle small">
                 {% if team.rank_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                     {{ team.rank_difference }} 🡩
@@ -53,11 +50,11 @@
                                 </span>
                         {% endif %}
                     </td>
-                    <td class="align-middle py-1 col-1 text-end border-end">
+                    <td class="align-middle py-1 col-1 text-end">
                         <img src="{{ team.flag_url }}"
                              alt="{{ team.name }}"
-                             class="border border-dark"
-                             style="width: 36px; height: 24px; background: #318CE7"
+                             class=""
+                             style="width: 36px; border: 1px solid black; height: 24px; background: #c5aa6a; border-radius: 3px"
                              loading="lazy">
                     </td>
                     <td class="col-5 align-middle">
@@ -67,7 +64,7 @@
                         style="{% if team.points_difference != 0 %}font-weight: 400{% endif %}">
                         {{ team.current_points | floatformat:2 }}
                     </td>
-                    <td class="py-1  col-2 align-middle">
+                    <td class="py-1  col-2 align-middle small">
                         {% if team.points_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                 +{{ team.points_difference | floatformat:2 }}
@@ -84,8 +81,7 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#{{ team.country_code }}"
                                 aria-label="Show country info"
-                                style="font-size: 1.05rem; color: black; font-weight: 500; background: #EEEEFF; border: 1px solid #318CE7; border-radius: 50%; line-height: 1; height: 22px; width: 22px">
-                            i
+                                style="font-size: 1.05rem; color: black; font-weight: 400; background: #FFFFAA; border: 2px solid #c5aa6a; border-radius: 10px; line-height: 1; height: 22px; width: 22px">i
                         </button>
                     </td>
                 </tr>
@@ -102,9 +98,9 @@
                                 <div class="modal-header bg-primary-subtle">
                                     <img src="{{ team.flag_url }}"
                                          alt="{{ team.name }}"
-                                         class="border border-dark"
+                                         class=""
                                          loading="lazy"
-                                         style="width: 36px; height: 24px">
+                                         style="width: 36px; border: 1px solid #c5aa6a; height: 24px; background: #318CE7; border-radius: 5px">
                                     <h1 class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
