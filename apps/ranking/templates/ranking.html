@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load cache %}
 
 {% block title %}
     RankFoot - Live FIFA Rankings: Daily Updates
@@ -103,6 +104,7 @@
             {% endfor %}
         </p>
 
+        {% cache 500 table teams.0.current_rank %}
         <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center">
@@ -170,6 +172,7 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% endcache %}
     </div>
 
     {% for team in teams %}
