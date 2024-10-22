@@ -11,96 +11,87 @@
 
 {% block content %}
     <style>
-  @media (max-width: 768px) {
-    /* Asosiy konteyner */
-    .col-lg-8 {
-      padding: 0 !important;
-    }
-
-    /* Konfederatsiya filtrlari */
-    .py-3 {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-    }
-    .py-3 a {
-      margin: 2px !important;
-      font-size: 0.8rem !important;
-      padding: 2px 4px !important;
-    }
-
-    /* Jadval */
-    .table {
-      font-size: 0.9rem !important;
-    }
-    .table td {
-      padding: 0.3rem !important;
-    }
-
-    /* Rank ustuni */
-    .table td:first-child {
-      padding-left: 0 !important;
-      width: 50px !important;
-    }
-    .table td:first-child span {
-      font-size: 0.8rem !important;
-      padding: 2px 4px !important;
-    }
-
-    /* Bayroq rasmlari */
-    .table td:nth-child(3) img {
-      width: 24px !important;
-      height: 16px !important;
-    }
-
-    /* Mamlakat nomi */
-    .table td:nth-child(4) span {
-      font-size: 0.85rem !important;
-    }
-
-    /* Ochkolar ustuni */
-    .table td:nth-child(5),
-    .table td:nth-child(6) {
-      font-size: 0.8rem !important;
-    }
-
-    /* Info tugmasi */
-    .table td:last-child {
-      padding-right: 0 !important;
-    }
-    .table td:last-child button {
-      font-size: 0.8rem !important;
-      padding: 0 !important;
-      width: 18px !important;
-      height: 18px !important;
-    }
-
-    /* Paginator */
-    .text-center.mb-4 {
-      margin-top: 1rem !important;
-    }
-    .text-center.mb-4 a {
-      font-size: 0.9rem !important;
-      padding: 2px 6px !important;
-    }
-  }
-</style>
-
+      @media (max-width: 768px) {
+        /* Asosiy konteyner */
+        .col-lg-8 {
+          padding: 0 !important;
+        }
+        /* Konfederatsiya filtrlari */
+        .py-3 {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+        }
+        .py-3 a {
+          margin: 2px !important;
+          font-size: 0.8rem !important;
+          padding: 2px 4px !important;
+        }
+        /* Jadval */
+        .table {
+          font-size: 0.9rem !important;
+        }
+        .table td {
+          padding: 0.3rem !important;
+        }
+        /* Rank ustuni */
+        .table td:first-child {
+          padding-left: 0 !important;
+          width: 50px !important;
+        }
+        .table td:first-child span {
+          font-size: 0.8rem !important;
+          padding: 2px 4px !important;
+        }
+        /* Bayroq rasmlari */
+        .table td:nth-child(3) img {
+          width: 24px !important;
+          height: 16px !important;
+        }
+        /* Mamlakat nomi */
+        .table td:nth-child(4) span {
+          font-size: 0.85rem !important;
+        }
+        /* Ochkolar ustuni */
+        .table td:nth-child(5),
+        .table td:nth-child(6) {
+          font-size: 0.8rem !important;
+        }
+        /* Info tugmasi */
+        .table td:last-child {
+          padding-right: 0 !important;
+        }
+        .table td:last-child button {
+          font-size: 0.8rem !important;
+          padding: 0 !important;
+          width: 18px !important;
+          height: 18px !important;
+        }
+        /* Paginator */
+        .text-center.mb-4 {
+          margin-top: 1rem !important;
+        }
+        .text-center.mb-4 a {
+          font-size: 0.9rem !important;
+          padding: 2px 6px !important;
+        }
+      }
+    </style>
 
     <div class="col-lg-8 m-auto mt-5">
-    <h1 class="text-center fs-3">Live FIFA Rankings: Daily Updates{% if request.GET.confederation %} - {{ request.GET.confederation }}{% endif %}</h1>
-    <h2 class="text-center fw-normal fs-6 text-secondary">Stay updated with RankFoot's live FIFA Men's Football Rankings.</h2>
+        <h1 class="text-center fs-3">Live FIFA Rankings: Daily Updates{% if request.GET.confederation %} - {{ request.GET.confederation }}{% endif %}</h1>
+        <h2 class="text-center fw-normal fs-6 text-secondary">Stay updated with RankFoot's live FIFA Men's Football Rankings.</h2>
         <hr>
         <p class="text-center fs-6 py-3">
             <a class="mx-1" href="{% url 'ranking' %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if not conf %}background: #c5aa6a !important; {% endif %}">
-                            ALL
-                        </a>
+                ALL
+            </a>
             {% for confederation in confederations %}
                 <a class="mx-1" href="{% url 'conf-ranking' confederation.0 %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if conf == confederation.0 %}background: #c5aa6a !important;{% endif %}">
-                            {{ confederation.0 }}
-                        </a>
+                    {{ confederation.0 }}
+                </a>
             {% endfor %}
         </p>
 
@@ -118,11 +109,11 @@
                 <tr>
                     <td class="text-center align-middle col-1 py-0 ps-3">
                         <span style="display: block; color: black; font-weight: 500; background: #FFFFFA; border: 2px solid #c5aa6a; border-radius: 10px; width: 40px !important; padding: 3px 5px">
-                        {{ team.current_rank }}
+                            {{ team.current_rank }}
                         </span>
                     </td>
                     <td class="col-1 align-middle small">
-                {% if team.rank_difference > 0 %}
+                        {% if team.rank_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                     {{ team.rank_difference }}🡩
                                 </span>
@@ -148,7 +139,7 @@
                         style="{% if team.points_difference != 0 %}font-weight: 400{% endif %}">
                         {{ team.current_points | floatformat:2 }}
                     </td>
-                    <td class="py-1  col-2 align-middle small">
+                    <td class="py-1 col-2 align-middle small">
                         {% if team.points_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                 +{{ team.points_difference | floatformat:2 }}
@@ -165,7 +156,8 @@
                                 data-bs-toggle="modal"
                                 data-bs-target="#{{ team.country_code }}"
                                 aria-label="Show country info"
-                                style="font-size: 1.05rem; color: black; font-weight: 400; background: #FFFFAA; border: 2px solid #c5aa6a; border-radius: 10px; line-height: 1; height: 22px; width: 22px">i
+                                style="font-size: 1.05rem; color: black; font-weight: 400; background: #FFFFAA; border: 2px solid #c5aa6a; border-radius: 10px; line-height: 1; height: 22px; width: 22px;">
+                            i
                         </button>
                     </td>
                 </tr>
@@ -175,92 +167,42 @@
         {% endcache %}
     </div>
 
-    {% for team in teams %}
-        <!-- Modal -->
-                    <div class="modal fade" id="{{ team.country_code }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                            <div class="modal-content">
-                                <div class="modal-header" style="background: #FFFFAA">
-                                    <img src="{{ team.flag_url }}"
-                                         alt="{{ team.name }}"
-                                         class=""
-                                         loading="lazy"
-                                         style="width: 36px; border: 1px solid black; height: 24px; background: #c5aa6a; border-radius: 3px">
-                                    <p class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</p>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    {% regroup team.games by competition as games_by_competition %}
-
-                                    {% for competition, games in games_by_competition %}
-                                        <p>{{ competition }}</p>
-                                        <table class="table table-striped table-hover" style="font-size: 0.9rem; line-height: 1">
-                                            <tbody>
-                                            {% for game in games %}
-                                                <tr>
-                                                    <td class="align-middle py-0">
-                                                        {{ game.date | date:"d-m-Y" }}
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <img class="border border-dark"
-                                                             src="{{ game.home_team.flag_url }}"
-                                                             alt="{{ game.home_team.name }}"
-                                                             style="width: 30px; border: 1px solid black; border-radius: 3px">
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        {{ game.home_team.country_code }}<br>
-                                                        {% if game.home_points_change > 0 %}
-                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0 5px;">
-                                                                +{{ game.home_points_change | floatformat:2 }}
-                                                            </span>
-                                                        {% elif game.home_points_change < 0 %}
-                                <span class="align-items-center small" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 0 5px;">
-                                                                {{ game.home_points_change | floatformat:2 }}
-                                                            </span>
-                                                        {% endif %}
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        {{ game.home_goals }}
-                                                        -
-                                                        {{ game.away_goals }}
-                                                    </td>
-                                                    <td class="align-middle text-center">
-                                                        {{ game.away_team.country_code }}<br>
-                                                        {% if game.away_points_change > 0 %}
-                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0 5px;">
-                                                                +{{ game.away_points_change | floatformat:2 }}
-                                                            </span>
-                                                        {% elif game.away_points_change < 0 %}
-                                <span class="align-items-center small" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 0 5px;">
-                                                                {{ game.away_points_change | floatformat:2 }}
-                                                            </span>
-                                                        {% endif %}
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <img class=""
-                                                             src="{{ game.away_team.flag_url }}"
-                                                             alt="{{ game.away_team.name }}"
-                                                             style="width: 30px; border: 1px solid black; border-radius: 3px">
-                                                    </td>
-                                                </tr>
-
-                                            {% endfor %}
-
-                                            </tbody>
-                                        </table>
-                                    {% endfor %}
-                                {% if not team.games %}
-                                                    <p class="text-center mb-0">No games</p>
-                                            {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": "Live FIFA Rankings",
+      "description": "Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "startDate": "{{ current_date }}",
+      "offers": {
+        "@type": "Offer",
+        "url": "{{ request.build_absolute_uri }}",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "performer": [
+        {% for team in teams %}
+        {
+          "@type": "SportsTeam",
+          "name": "{{ team.name }}",
+          "image": "{{ team.flag_url }}",
+          "member": {
+            "name": "FIFA"
+          },
+          "ranking": {
+            "@type": "Place",
+            "name": "{{ team.current_rank }}",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "{{ team.name }}"
+            }
+          },
+          "points": "{{ team.current_points | floatformat:2 }}"
+        }{% if not forloop.last %},{% endif %}
         {% endfor %}
-        <!-- Paginator -->
-    <div class="text-center mb-4">
-        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if not request.GET.page %}background: #c5aa6a;{% endif %}">1</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if request.GET.page == '2' %}background: #c5aa6a;{% endif %}">2</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if request.GET.page == '3' %}background: #c5aa6a;{% endif %}">3</a>
-    </div>
+      ]
+    }
+    </script>
 {% endblock %}
