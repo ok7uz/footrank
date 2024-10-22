@@ -2,6 +2,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path, include, reverse_lazy
 from django.views.generic import RedirectView
 
@@ -10,6 +11,10 @@ from apps.ranking.sitemaps import RankingSitemap, NavLinkSitemap
 
 class HomeView(RedirectView):
     url = reverse_lazy('ranking')
+
+
+def custom_404_view(request, exception):
+    return render(request, '404.html', status=404)
 
 
 def robots_txt(request):
