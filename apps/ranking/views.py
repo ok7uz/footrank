@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.shortcuts import redirect, get_object_or_404
+from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 
 from apps.ranking.forms import TeamChangeForm, CompetitionChangeForm
@@ -15,15 +16,28 @@ class RankingView(ListView):
     paginate_by = 100
 
     def get_queryset(self):
-        confederation = self.request.GET.get('confederation')
-        queryset = Team.objects.filter(current_rank__isnull=False).prefetch_related('home_games', 'away_games')
-        if confederation:
-            queryset = queryset.filter(confederation=confederation)
-        return queryset
+        return Team.objects.filter(current_rank__isnull=False).prefetch_related('home_games', 'away_games')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['confederations'] = Team.CONFEDERATION_CHOICES[:-1]
+        return context
+
+
+class ConfederationRankingView(RankingView):
+
+    def get_queryset(self):
+        confederation = self.kwargs.get('conf', None)
+        if confederation and (confederation, confederation) in Team.CONFEDERATION_CHOICES:
+            queryset = Team.objects.filter(
+                current_rank__isnull=False,
+                confederation=confederation).prefetch_related('home_games', 'away_games')
+            return queryset
+        return Team.objects.filter(current_rank__isnull=False).prefetch_related('home_games', 'away_games')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['conf'] = self.kwargs.get('conf', None)
         return context
 
 

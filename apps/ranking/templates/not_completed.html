@@ -12,7 +12,11 @@
 
 {% block content %}
     <div class="row mt-5">
+    <h1 class="text-center fs-3">National Teams: Match Scores </h1>
+<h2 class="text-center fw-normal fs-6 text-secondary">Track the latest match results and updated points for each national team.</h2>
+<hr>
     <div class="col-lg-6 pe-5 border-end border-dark">
+
     <p class="text-center fs-5">Past Games</p>
         <hr>
         {% regroup games.past_games by competition as games_by_competition %}

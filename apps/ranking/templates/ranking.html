@@ -4,8 +4,8 @@
     FIFA Men's Football Rankings - Latest National Team Standings
 {% endblock %}
 
-{% block og-title %}FIFA Men's Football Rankings - Latest National Team Standings{% endblock %}
-{% block og-description %}Check out the latest FIFA Men's Rankings to see where national football teams stand. Get real-time updates on rankings based on international competitions and match results.{% endblock %}
+{% block og-title %}RankFoot - Live FIFA Rankings: Daily Updates{% endblock %}
+{% block og-description %}Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
 {% block content %}
@@ -87,14 +87,17 @@
 
 
     <div class="col-lg-8 m-auto mt-5">
+    <h1 class="text-center fs-3">Live FIFA Rankings: Daily Updates{% if request.GET.confederation %} - {{ request.GET.confederation }}{% endif %}</h1>
+    <h2 class="text-center fw-normal fs-6 text-secondary">Stay updated with RankFoot's live FIFA Men's Football Rankings.</h2>
+        <hr>
         <p class="text-center fs-6 py-3">
             <a class="mx-1" href="{% url 'ranking' %}"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if not request.GET.confederation %}background: #c5aa6a !important; {% endif %}">
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if not conf %}background: #c5aa6a !important; {% endif %}">
                             ALL
                         </a>
             {% for confederation in confederations %}
-                <a class="mx-1" href="{% url 'ranking' %}?confederation={{ confederation.0 }}"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 400; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if request.GET.confederation == confederation.0 %}background: #c5aa6a !important;{% endif %}">
+                <a class="mx-1" href="{% url 'conf-ranking' confederation.0 %}"
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: black; padding: 3px 6px; background: #FFFFF0; border: 2px solid #c5aa6a; border-radius: 20px; line-height: 1; width: 100px !important; {% if conf == confederation.0 %}background: #c5aa6a !important;{% endif %}">
                             {{ confederation.0 }}
                         </a>
             {% endfor %}
@@ -180,7 +183,7 @@
                                          class=""
                                          loading="lazy"
                                          style="width: 36px; border: 1px solid black; height: 24px; background: #c5aa6a; border-radius: 3px">
-                                    <h1 class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</h1>
+                                    <p class="modal-title fs-5 ms-3 fw-normal" id="exampleModalLabel">{{ team.name }}</p>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -197,7 +200,9 @@
                                                     </td>
                                                     <td class="align-middle">
                                                         <img class="border border-dark"
-                                                             src="{{ game.home_team.flag_url }}" style="width: 30px; border: 1px solid black; border-radius: 3px">
+                                                             src="{{ game.home_team.flag_url }}"
+                                                             alt="{{ game.home_team.name }}"
+                                                             style="width: 30px; border: 1px solid black; border-radius: 3px">
                                                     </td>
                                                     <td class="align-middle text-center">
                                                         {{ game.home_team.country_code }}<br>
@@ -228,7 +233,12 @@
                                                             </span>
                                                         {% endif %}
                                                     </td>
-                                                    <td class="align-middle"><img class="" src="{{ game.away_team.flag_url }}" style="width: 30px; border: 1px solid black; border-radius: 3px"></td>
+                                                    <td class="align-middle">
+                                                        <img class="" 
+                                                             src="{{ game.away_team.flag_url }}" 
+                                                             alt="{{ game.away_team.name }}"
+                                                             style="width: 30px; border: 1px solid black; border-radius: 3px">
+                                                    </td>
                                                 </tr>
 
                                             {% endfor %}
@@ -246,8 +256,8 @@
         {% endfor %}
         <!-- Paginator -->
     <div class="text-center mb-4">
-        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #c5aa6a; color: black; {% if not request.GET.page %}background: #c5aa6a;{% endif %}">1</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #c5aa6a; color: black; {% if request.GET.page == '2' %}background: #c5aa6a;{% endif %}">2</a>
-        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #c5aa6a; color: black; {% if request.GET.page == '3' %}background: #c5aa6a;{% endif %}">3</a>
+        <a class="btn py-0" href="{% url 'ranking' %}" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if not request.GET.page %}background: #c5aa6a;{% endif %}">1</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=2" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if request.GET.page == '2' %}background: #c5aa6a;{% endif %}">2</a>
+        <a class="btn py-0" href="{% url 'ranking' %}?page=3" style="border: 1px solid #c5aa6a; font-weight: 500; color: black; {% if request.GET.page == '3' %}background: #c5aa6a;{% endif %}">3</a>
     </div>
 {% endblock %}

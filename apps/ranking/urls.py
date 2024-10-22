@@ -4,8 +4,6 @@ from apps.ranking import views
 
 
 urlpatterns = [
-    path('', views.RankingView.as_view(), name='ranking'),
-
     path('countries', views.CountryListView.as_view(), name='country_list'),
     path('countries/<str:country_code>/', views.CountryUpdateView.as_view(), name='country_update'),
 
@@ -15,4 +13,7 @@ urlpatterns = [
     path('games', views.NotCompletedGameView.as_view(), name='game_list'),
     path('games/<int:game_id>/calculate', views.calculate_games, name='calculate_games'),
     path('games/<int:game_id>/delete', views.delete_game, name='delete_game'),
+
+    path('', views.RankingView.as_view(), name='ranking'),
+    path('<str:conf>', views.ConfederationRankingView.as_view(), name='conf-ranking'),
 ]
