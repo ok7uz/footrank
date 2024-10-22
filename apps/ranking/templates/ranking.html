@@ -95,7 +95,7 @@
             {% endfor %}
         </p>
 
-        {% cache 500 table teams.0.current_rank %}
+{#        {% cache 500 table teams.0.current_rank %}#}
         <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center">
@@ -108,7 +108,7 @@
                 {% for team in teams %}
                 <tr>
                     <td class="text-center align-middle col-1 py-0 ps-3">
-                        <span style="display: block; color: black; font-weight: 500; background: #FFFFFA; border: 2px solid #c5aa6a; border-radius: 10px; width: 40px !important; padding: 3px 5px">
+                        <span style="display: block; font-weight: 500; width: 40px !important; padding: 3px 5px">
                             {{ team.current_rank }}
                         </span>
                     </td>
@@ -131,12 +131,12 @@
                              loading="lazy">
                     </td>
                     <td class="col-5 align-middle">
-                        <span class="ms-2 align-items-center text-dark" style="font-size: 1rem">
+                        <span class="ms-2 align-items-center text-dark" style="font-size: 0.98rem">
                             {{ team.name }}
                         </span>
                     </td>
                     <td class="py-1 text-center col-2 align-middle"
-                        style="{% if team.points_difference != 0 %}font-weight: 400{% endif %}">
+                        style="font-size: 0.95rem; {% if team.points_difference != 0 %}font-weight: 400;{% endif %}">
                         {{ team.current_points | floatformat:2 }}
                     </td>
                     <td class="py-1 col-2 align-middle small">
@@ -164,7 +164,7 @@
                 {% endfor %}
             </tbody>
         </table>
-        {% endcache %}
+{#        {% endcache %}#}
     </div>
 
     <script type="application/ld+json">
