@@ -160,8 +160,15 @@ class StatisticsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         teams = Team.objects.annotate(
-            rank_dif=F('previous_rank') - F('current_rank')
+            rank_dif=F('previous_rank') - F('current_rank'),
+            point_dif=F('current_points') - F('previous_points')
         )
         context['top_movers'] = teams.filter(rank_dif__gt=0).order_by('-rank_dif')[:10]
+        context['top_points_movers'] = teams.filter(
+            current_rank__isnull=False, point_dif__gt=0
+        ).order_by('-point_dif')[:10]
         context['top_fallers'] = teams.filter(rank_dif__lt=0).order_by('rank_dif')[:10]
+        context['top_points_fallers'] = teams.filter(
+            current_rank__isnull=False, point_dif__lt=0
+        ).order_by('point_dif')[:10]
         return context

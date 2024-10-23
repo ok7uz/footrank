@@ -2,11 +2,11 @@
 {% load cache %}
 
 {% block title %}
-    Statistics: Ranking Movementss
+    Statistics: Ranking and Points Movements
 {% endblock %}
 
-{% block og-title %}Statistics: Ranking Movements{% endblock %}
-{% block og-description %}Top Movers and Top Fallers in FIFA Rankings{% endblock %}
+{% block og-title %}Statistics: Ranking and Points Movements{% endblock %}
+{% block og-description %}Top Movers, Fallers, and Points Changes in FIFA Rankings{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
 {% block content %}
@@ -79,8 +79,8 @@
     </style>
 
     <div class="col-lg-8 m-auto mt-5">
-        <h1 class="text-center fs-3"  style="color: #1F51FF">Statistics: Ranking Movements</h1>
-        <h2 class="text-center fw-normal fs-6">Top Movers and Top Fallers in FIFA Rankings</h2>
+        <h1 class="text-center fs-3"  style="color: #1F51FF">Statistics: Ranking and Points Movements</h1>
+        <h2 class="text-center fw-normal fs-6">Top Movers, Fallers, and Points Changes in FIFA Rankings</h2>
         <hr>
 
     <h3 class="text-center fs-4 mt-4">TOP MOVERS</h3>
@@ -150,6 +150,73 @@
         </table>
         {% endcache %}
 
+    <h3 class="text-center fs-4 mt-4">TOP POINTS MOVERS</h3>
+        <hr>
+
+        {% cache 500 top_points_mover %}
+        <table class="table table-responsive table-hover table-striped">
+            <thead>
+                <tr class="text-center mb-1">
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF">#</td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                    <td class="align-middle text-white py-2 ps-3 text-start" style="background: #1F51FF; border: 1px solid #1F51FF">Country</td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF">Points</td>
+                    <td class="align-middle text-white py-2 text-start" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in top_points_movers %}
+                <tr>
+                    <td class="col-1 text-center pe-0 align-middle small">
+                        {% if team.rank_difference > 0 %}
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference }}🡩
+                                </span>
+                        {% elif team.rank_difference < 0 %}
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference | stringformat:"d" | slice:"1:" }}🡫
+                                </span>
+                        {% endif %}
+                    </td>
+                    <td class="text-center align-middle col-1 py-0 ps-3">
+                        <span style="display: block; font-weight: 500; width: 40px !important; padding: 3px 5px">
+                            {{ team.current_rank }}
+                        </span>
+                    </td>
+                    <td class="align-middle py-1 col-1 text-end">
+                        <img src="{{ team.flag_url }}"
+                             alt="{{ team.name }}"
+                             class=""
+                             style="width: 36px; height: 24px; border: 1px solid black; background: #c5aa6a; border-radius: 3px"
+                             loading="lazy">
+                    </td>
+                    <td class="col-5 align-middle">
+                        <span class="ms-2 align-items-center text-dark" style="font-size: 0.98rem">
+                            {{ team.name }}
+                        </span>
+                    </td>
+                    <td class="py-1 text-center col-2 align-middle"
+                        style="font-size: 0.95rem; {% if team.points_difference != 0 %}font-weight: 400;{% endif %}">
+                        {{ team.current_points | floatformat:2 }}
+                    </td>
+                    <td class="py-1 col-2 align-middle small">
+                        {% if team.points_difference > 0 %}
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                +{{ team.points_difference | floatformat:2 }}
+                                </span>
+                        {% elif team.points_difference < 0 %}
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                {{ team.points_difference | floatformat:2 }}
+                            </span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endcache %}
+
     <h3 class="text-center fs-4 mt-5">TOP FALLERS</h3>
         <hr>
     {% cache 500 top_faller %}
@@ -166,6 +233,72 @@
             </thead>
             <tbody>
                 {% for team in top_fallers  %}
+                <tr>
+                    <td class="col-1 text-center pe-0 align-middle small">
+                        {% if team.rank_difference > 0 %}
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference }}🡩
+                                </span>
+                        {% elif team.rank_difference < 0 %}
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                    {{ team.rank_difference | stringformat:"d" | slice:"1:" }}🡫
+                                </span>
+                        {% endif %}
+                    </td>
+                    <td class="text-center align-middle col-1 py-0 ps-3">
+                        <span style="display: block; font-weight: 500; width: 40px !important; padding: 3px 5px">
+                            {{ team.current_rank }}
+                        </span>
+                    </td>
+                    <td class="align-middle py-1 col-1 text-end">
+                        <img src="{{ team.flag_url }}"
+                             alt="{{ team.name }}"
+                             class=""
+                             style="width: 36px; height: 24px; border: 1px solid black; background: #c5aa6a; border-radius: 3px"
+                             loading="lazy">
+                    </td>
+                    <td class="col-5 align-middle">
+                        <span class="ms-2 align-items-center text-dark" style="font-size: 0.98rem">
+                            {{ team.name }}
+                        </span>
+                    </td>
+                    <td class="py-1 text-center col-2 align-middle"
+                        style="font-size: 0.95rem; {% if team.points_difference != 0 %}font-weight: 400;{% endif %}">
+                        {{ team.current_points | floatformat:2 }}
+                    </td>
+                    <td class="py-1 col-2 align-middle small">
+                        {% if team.points_difference > 0 %}
+                                <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
+                                +{{ team.points_difference | floatformat:2 }}
+                                </span>
+                        {% elif team.points_difference < 0 %}
+                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                {{ team.points_difference | floatformat:2 }}
+                            </span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endcache %}
+
+    <h3 class="text-center fs-4 mt-5">TOP POINTS FALLERS</h3>
+        <hr>
+    {% cache 500 top_points_faller %}
+    <table class="table table-responsive table-hover table-striped">
+            <thead>
+                <tr class="text-center mb-1">
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF">#</td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                    <td class="align-middle text-white py-2 ps-3 text-start" style="background: #1F51FF; border: 1px solid #1F51FF">Country</td>
+                    <td class="align-middle text-white py-2" style="background: #1F51FF; border: 1px solid #1F51FF">Points</td>
+                    <td class="align-middle text-white py-2 text-start" style="background: #1F51FF; border: 1px solid #1F51FF"></td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in top_points_fallers  %}
                 <tr>
                     <td class="col-1 text-center pe-0 align-middle small">
                         {% if team.rank_difference > 0 %}
