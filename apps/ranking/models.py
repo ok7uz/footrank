@@ -126,3 +126,14 @@ class Period(models.Model):
         verbose_name = 'Period'
         verbose_name_plural = 'Periods'
         ordering = ('start_date', )
+
+
+class Settings(models.Model):
+    key = models.CharField(max_length=64)
+    value = models.CharField(max_length=128)
+
+    class Meta:
+        db_table = 'settings'
+        verbose_name = 'Settings'
+        verbose_name_plural = 'Settings'
+        ordering = ('key', )

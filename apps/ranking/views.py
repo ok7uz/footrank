@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.db.models import F
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic import ListView, TemplateView
 
@@ -151,3 +152,16 @@ def delete_game(request, game_id):
     game = get_object_or_404(Game, id=game_id)
     game.delete()
     return redirect('game_list')
+
+
+class StatisticsView(TemplateView):
+    template_name = 'statistics.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        teams = Team.objects.annotate(
+            rank_dif=F('previous_rank') - F('current_rank')
+        )
+        context['top_movers'] = teams.filter(rank_dif__gt=0).order_by('-rank_dif')[:10]
+        context['top_fallers'] = teams.filter(rank_dif__lt=0).order_by('rank_dif')[:10]
+        return context

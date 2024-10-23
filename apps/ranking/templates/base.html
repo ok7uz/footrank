@@ -46,9 +46,13 @@
          style="background: 	#1E202B">
         <div class="container">
             <a class="text-white text-decoration-none" href="{% url 'ranking' %}">FootRank.com</a>
+            <a class="text-white text-decoration-none ms-4" href="{% url 'ranking' %}">Ranking</a>
+            {% if request.user.is_staff %}
             <a class="text-white text-decoration-none ms-4" href="{% url 'country_list' %}">Countries</a>
+            {% endif %}
             <a class="text-white text-decoration-none ms-4" href="{% url 'competition_list' %}">Competitions</a>
             <a class="text-white text-decoration-none ms-4" href="{% url 'game_list' %}">Games</a>
+            <a class="text-white text-decoration-none ms-4" href="{% url 'statistics' %}">Statistics</a>
         </div>
     </nav>
 

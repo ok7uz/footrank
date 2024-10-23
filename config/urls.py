@@ -35,7 +35,7 @@ sitemaps = {
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('ranking/', include('apps.ranking.urls')),
+    path('', include('apps.ranking.urls')),
     path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
