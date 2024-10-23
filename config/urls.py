@@ -19,11 +19,12 @@ def custom_404_view(request, exception):
 
 def robots_txt(request):
     lines = [
-        "User-Agent: *",
-        "Disallow: /admin/",
-        "Allow: /",
+        'User-Agent: *',
+        'Disallow: /admin/',
+        'Allow: /\n',
+        'Sitemap: https://rankfoot.com/sitemap.xml'
     ]
-    return HttpResponse("\n".join(lines), content_type="text/plain")
+    return HttpResponse('\n'.join(lines), content_type='text/plain')
 
 
 sitemaps = {
@@ -35,7 +36,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('ranking/', include('apps.ranking.urls')),
-    path("robots.txt", robots_txt),
+    path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
