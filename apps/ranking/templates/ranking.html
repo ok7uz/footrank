@@ -117,7 +117,7 @@
                                     {{ team.rank_difference }}🡩
                                 </span>
                         {% elif team.rank_difference < 0 %}
-                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                <span class="align-items-center" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 2px 5px;">
                                     {{ team.rank_difference | stringformat:"d" | slice:"1:" }}🡫
                                 </span>
                         {% endif %}
@@ -149,7 +149,7 @@
                                 +{{ team.points_difference | floatformat:2 }}
                                 </span>
                         {% elif team.points_difference < 0 %}
-                                <span class="align-items-center" style="color: red; background: #FFEEEE; border: 1px solid red; border-radius: 20px; padding: 2px 5px;">
+                                <span class="align-items-center" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 2px 5px;">
                                 {{ team.points_difference | floatformat:2 }}
                             </span>
                         {% endif %}

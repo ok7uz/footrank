@@ -28,7 +28,7 @@ class NavLinkSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['competition_list', 'game_list', 'country_list']
+        return ['competition_list', 'game_list', 'statistics']
 
     def location(self, item):
         return reverse_lazy(item)
