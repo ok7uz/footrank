@@ -95,7 +95,7 @@
             {% endfor %}
         </p>
 
-{#        {% cache 500 table teams.0.current_rank %}#}
+        {% cache 500 table teams.0.current_rank %}
         <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center">
@@ -164,45 +164,62 @@
                 {% endfor %}
             </tbody>
         </table>
-{#        {% endcache %}#}
+        {% endcache %}
     </div>
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SportsEvent",
-      "name": "Live FIFA Rankings",
-      "description": "Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "startDate": "{{ current_date }}",
-      "offers": {
-        "@type": "Offer",
-        "url": "{{ request.build_absolute_uri }}",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "performer": [
-        {% for team in teams %}
-        {
-          "@type": "SportsTeam",
-          "name": "{{ team.name }}",
-          "image": "{{ team.flag_url }}",
-          "member": {
-            "name": "FIFA"
-          },
-          "ranking": {
-            "@type": "Place",
-            "name": "{{ team.current_rank }}",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "{{ team.name }}"
-            }
-          },
-          "points": "{{ team.current_points | floatformat:2 }}"
-        }{% if not forloop.last %},{% endif %}
-        {% endfor %}
-      ]
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Live FIFA Rankings",
+  "description": "Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "startDate": "{{ current_date }}",
+  "endDate": "{{ current_date }}",
+  "location": {
+    "@type": "Place",
+    "name": "Global Football Stadium",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Worldwide"
     }
-    </script>
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "FIFA",
+    "url": "https://www.fifa.com"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ request.build_absolute_uri }}",
+    "price": "0",
+    "priceCurrency": "USD",
+    "validFrom": "{{ current_date }}",
+    "availability": "https://schema.org/InStock"
+  },
+  "performer": [
+    {% for team in teams %}
+    {
+      "@type": "SportsTeam",
+      "name": "{{ team.name }}",
+      "image": "{{ team.flag_url }}",
+      "member": {
+        "name": "FIFA"
+      },
+      "ranking": {
+        "@type": "Place",
+        "name": "{{ team.current_rank }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ team.name }}"
+        }
+      },
+      "points": "{{ team.current_points | floatformat:2 }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
 {% endblock %}

@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from django.shortcuts import redirect, get_object_or_404
-from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 
 from apps.ranking.forms import TeamChangeForm, CompetitionChangeForm
@@ -21,6 +20,7 @@ class RankingView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['confederations'] = Team.CONFEDERATION_CHOICES[:-1]
+        context['current_date'] = datetime.today().strftime('%Y-%m-%d')
         return context
 
 
