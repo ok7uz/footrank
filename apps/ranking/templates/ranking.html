@@ -82,8 +82,6 @@
         <h1 class="text-center fs-3"  style="color: #1F51FF">{% if conf %}<span class="fw-normal">{{ conf }} - </span>{% endif %}Live FIFA Rankings: Daily Updates</h1>
         <h2 class="text-center fw-normal fs-6">{% if conf %}Latest {{ conf }} Team Rankings: Updated Daily{% else %} Live FIFA Rankings: Real-Time Updates and Daily Changes{% endif %}</h2>
         <hr>
-        <h3 class="text-center fs-4 mt-4">RANKING</h3>
-        <hr>
         <p class="text-center fs-6 py-3">
             <a class="mx-1" href="{% url 'ranking' %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: #1F51FF; padding: 3px 6px; background: white; border: 2px solid #1F51FF; border-radius: 20px; line-height: 1; width: 100px !important; {% if not conf %}background: #1F51FF !important; color: white;{% endif %}">
@@ -96,7 +94,7 @@
                 </a>
             {% endfor %}
         </p>
-    {% cache 500 table conf %}
+    {% cache 500 table conf request.GET.page %}
         <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center mb-1">
@@ -159,6 +157,15 @@
             </tbody>
         </table>
         {% endcache %}
+{% if not conf %}
+    <p class="text-center fs-6 py-3">
+            <a class="mx-1 px-2" href="{% url 'ranking' %}"
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: #1F51FF; padding: 3px 6px; background: white; border: 2px solid #1F51FF; border-radius: 10px; line-height: 1; width: 100px !important; {% if not request.GET.page %}background: #1F51FF !important; color: white;{% endif %}">
+                1</a><a class="mx-1 px-2" href="{% url 'ranking' %}?page=2"
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: #1F51FF; padding: 3px 6px; background: white; border: 2px solid #1F51FF; border-radius: 10px; line-height: 1; width: 100px !important; {% if request.GET.page == '2' %}background: #1F51FF !important; color: white;{% endif %}">2</a><a class="mx-1 px-2" href="{% url 'ranking' %}?page=3"
+                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: #1F51FF; padding: 3px 6px; background: white; border: 2px solid #1F51FF; border-radius: 10px; line-height: 1; width: 100px !important; {% if request.GET.page == '3' %}background: #1F51FF !important; color: white;{% endif %}">3</a>
+        </p>
+    {% endif %}
     </div>
 
     <script type="application/ld+json">
