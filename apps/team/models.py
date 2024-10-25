@@ -23,5 +23,8 @@ class Team(models.Model):
         verbose_name_plural = 'Teams'
         ordering = ('name', )
 
+    def games(self, period):
+        return self.home_games.filter(period=period).all() | self.away_games.filter(period=period).all()
+
     def __str__(self):
         return self.name

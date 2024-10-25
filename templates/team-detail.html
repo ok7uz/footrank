@@ -82,39 +82,12 @@
 
         <h1 class="text-center fs-3"
             style="color: #1F51FF">
-            <img src="{{ team.flag_url }}"
-                 alt="{{ team.name }}" width="36"
-                 style="border: 1px solid black; border-radius: 3px">
             {{ team.name }}
         </h1>
         <h2 class="text-center fw-normal fs-6">Live Ranking and Matches</h2>
-        <div class="col-lg-6 m-auto">
-        <select name="period"
-                class="form-control text-center form-control-sm py-0"
-                style="font-size: 0.95rem; border: 1px solid #1F51FF"
-                onchange="location.href=`{% url "ranking" %}?period=${this.value}`">
-            {% for per in periods %}
-            <option value="{{ per.id }}"
-                    {% if request.GET.period == per.id|stringformat:"s" or not request.GET.period and period.id|stringformat:"s" == per.id|stringformat:"s" %}selected="selected"{% endif %}>
-                {{ per }}
-            </option>
-            {% endfor %}
-        </select>
-        </div>
-        <p class="text-center fs-6 py-3">
-            <a class="mx-1" href="{% url 'ranking' %}{% if request.GET.period %}?period={{ request.GET.period }}{% endif %}"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; width: 100px !important; {% if not conf %}background: #1F51FF !important;{% endif %}">
-                ALL
-            </a>
-            {% for confederation in confederations %}
-                <a class="mx-1" href="{% url 'conf-ranking' confederation.0 %}{% if request.GET.period %}?period={{ request.GET.period }}{% endif %}"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; width: 100px !important; {% if conf == confederation.0 %}background: #1F51FF !important;{% endif %}">
-                    {{ confederation.0 }}
-                </a>
-            {% endfor %}
-        </p>
-{#    {% cache 500 table conf request.GET.page %}#}
-        <table class="table table-responsive table-hover table-striped">
+    <hr>
+
+    <table class="table table-responsive table-hover table-striped">
             <thead>
                 <tr class="text-center mb-1">
                     <td class="align-middle text-white py-2"
@@ -132,7 +105,6 @@
                 </tr>
             </thead>
             <tbody>
-                {% for ranking in rankings %}
                 <tr>
                     <td class="col-1 text-center pe-0 align-middle small">
                         {% if ranking.rank_difference > 0 %}
@@ -145,7 +117,7 @@
                                 </span>
                         {% endif %}
                     </td>
-                    <td class="text-center align-middle col-1 py-0 ps-3">
+                    <td class="text-center align-middle col-1 py-2 ps-3">
                         <span style="display: block; font-weight: 500; width: 40px !important; padding: 3px 5px">
                             {{ ranking.current_rank }}
                         </span>
@@ -178,19 +150,71 @@
                         {% endif %}
                     </td>
                 </tr>
-                {% endfor %}
             </tbody>
         </table>
-{#        {% endcache %}#}
-{% if not conf %}
-    <p class="text-center fs-6 py-3">
-            <a class="mx-1 px-2" href="{% url 'ranking' %}"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; width: 100px !important; {% if not request.GET.page %}background: #1F51FF !important;{% endif %}">
-                1</a><a class="mx-1 px-2" href="{% url 'ranking' %}?page=2"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; {% if request.GET.page == '2' %}background: #1F51FF !important;{% endif %}">2</a><a class="mx-1 px-2" href="{% url 'ranking' %}?page=3"
-                   style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; {% if request.GET.page == '3' %}background: #1F51FF !important;{% endif %}">3</a>
-        </p>
-    {% endif %}
+    <hr>
+    <h2 class="text-center fs-4">Games</h2>
+    <hr>
+        {% regroup games by competition as games_by_competition %}
+        {% for competition, games in games_by_competition %}
+            <p class="pt-3 text-center mb-1" style="color:  #014a7f">{{ competition }}</p>
+            <p class="text-center text-opacity-75">{{ games.0.date | date:"M d, Y" }}</p>
+            <hr>
+            <table class="table table-responsive table-striped table-hover" style="font-size: 0.9rem; line-height: 1">
+                <tbody>
+                {% for game in games %}
+                    <tr>
+                        <td class="align-middle py-0 text-center col-2">
+                            <span class="text-d">{{ game.date | date:"H:i" }}</span>
+                        </td>
+                        <td class="align-middle col-1 py-0 ps-2">
+                            <img src="{{ game.home_team.flag_url }}"
+                                 loading="lazy"
+                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                        </td>
+                        <td class="align-middle text-start col-3">
+                            {{ game.home_team.name }}<br>
+                            {% if game.home_points_change > 0 %}
+                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">
+                                +{{ game.home_points_change | floatformat:2 }}
+                                </span>
+                        {% elif game.home_points_change < 0 %}
+                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0px 5px;">
+                                {{ game.home_points_change | floatformat:2 }}
+                            </span>
+                        {% endif %}
+                        </td>
+                        <td class="align-middle text-center col-1">
+                            {{ game.home_goals }}
+                            -
+                            {{ game.away_goals }}
+                        </td>
+                        <td class="align-middle text-end col-3">
+                        {{ game.away_team.name }}<br>
+                            {% if game.away_points_change > 0 %}
+                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">
+                                +{{ game.away_points_change | floatformat:2 }}
+                                </span>
+                        {% elif game.away_points_change < 0 %}
+                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0px 5px;">
+                                {{ game.away_points_change | floatformat:2 }}
+                            </span>
+                        {% endif %}
+                        </td>
+                        <td class="align-middle col-1 py-0 pe-2">
+                            <img src="{{ game.away_team.flag_url }}"
+                                 loading="lazy"
+                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        {% endfor %}
+        {% if not games.past_games %}
+            <p class="text-center mb-0">No games</p>
+        {% endif %}
     </div>
 
     <script type="application/ld+json">
