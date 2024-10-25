@@ -23,7 +23,7 @@ class RankingView(ListView):
             if not period:
                 period = Period.objects.filter(end_date__lte=today).order_by('-end_date').first()
 
-        return Ranking.objects.filter(period=period).select_related('team')
+        return Ranking.objects.filter(current_rank__isnull=False, period=period).select_related('team')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

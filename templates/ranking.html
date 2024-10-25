@@ -45,8 +45,8 @@
         }
         /* Bayroq rasmlari */
         .table td:nth-child(3) img {
-          width: 24px !important;
-          height: 16px !important;
+          width: 30px !important;
+          height: 20px !important;
         }
         /* Mamlakat nomi */
         .table td:nth-child(4) span {
@@ -96,12 +96,12 @@
         </select>
         </div>
         <p class="text-center fs-6 py-3">
-            <a class="mx-1" href="{% url 'ranking' %}"
+            <a class="mx-1" href="{% url 'ranking' %}{% if request.GET.period %}?period={{ request.GET.period }}{% endif %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; width: 100px !important; {% if not conf %}background: #1F51FF !important;{% endif %}">
                 ALL
             </a>
             {% for confederation in confederations %}
-                <a class="mx-1" href="{% url 'conf-ranking' confederation.0 %}"
+                <a class="mx-1" href="{% url 'conf-ranking' confederation.0 %}{% if request.GET.period %}?period={{ request.GET.period }}{% endif %}"
                    style="font-size: 0.95rem; text-decoration: none; font-weight: 500; color: white; padding: 3px 6px; background: #5F91FF; border-radius: 5px; line-height: 1; width: 100px !important; {% if conf == confederation.0 %}background: #1F51FF !important;{% endif %}">
                     {{ confederation.0 }}
                 </a>
