@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.urls import path, include, reverse_lazy
 from django.views.generic import RedirectView
 
-from apps.ranking.sitemaps import RankingSitemap, NavLinkSitemap
+from apps.ranking.sitemaps import RankingSitemap, NavLinkSitemap, TeamSitemap
 
 
 class HomeView(RedirectView):
@@ -30,12 +30,15 @@ def robots_txt(request):
 sitemaps = {
     'ranking': RankingSitemap,
     'nav-links': NavLinkSitemap,
+    'team-detail': TeamSitemap,
 }
 
 urlpatterns = [
     path('', HomeView.as_view(), name='home'),
     path('admin', admin.site.urls),
     path('', include('apps.ranking.urls')),
+    path('', include('apps.team.urls')),
+    path('', include('apps.game.urls')),
     path('robots.txt', robots_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]

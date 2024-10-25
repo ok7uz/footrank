@@ -1,3 +1,18 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.game import models
+
+
+@admin.register(models.League)
+class LeagueAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Competition)
+class CompetitionAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Game)
+class GameAdmin(admin.ModelAdmin):
+    pass

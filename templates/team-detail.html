@@ -2,10 +2,10 @@
 {% load cache %}
 
 {% block title %}
-    {% if conf %}{{ conf }}{% else %}RankFoot.com{% endif %} - Live FIFA Rankings: Daily Updates
+    {{ team.name }} - Live Ranking and Matches
 {% endblock %}
 
-{% block og-title %}RankFoot - Live FIFA Rankings: Daily Updates {% if conf %} - {{ conf }}{% endif %}{% endblock %}
+{% block og-title %}{{ team.name }} - Live Ranking and Matches{% endblock %}
 {% block og-description %}Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
@@ -79,10 +79,16 @@
     </style>
 
     <div class="col-lg-8 m-auto mt-5">
-        <h1 class="text-center fs-3"  style="color: #1F51FF">{% if conf %}<span class="fw-normal">{{ conf }} - </span>{% endif %}Live FIFA Rankings: Daily Updates</h1>
-        <h2 class="text-center fw-normal fs-6">{% if conf %}Latest {{ conf }} Team Rankings: Updated Daily{% else %} Live FIFA Rankings: Real-Time Updates and Daily Changes{% endif %}</h2>
-        <hr>
-        <div class="col-lg-6 m-auto mb-4">
+
+        <h1 class="text-center fs-3"
+            style="color: #1F51FF">
+            <img src="{{ team.flag_url }}"
+                 alt="{{ team.name }}" width="36"
+                 style="border: 1px solid black; border-radius: 3px">
+            {{ team.name }}
+        </h1>
+        <h2 class="text-center fw-normal fs-6">Live Ranking and Matches</h2>
+        <div class="col-lg-6 m-auto">
         <select name="period"
                 class="form-control text-center form-control-sm py-0"
                 style="font-size: 0.95rem; border: 1px solid #1F51FF"
@@ -127,8 +133,7 @@
             </thead>
             <tbody>
                 {% for ranking in rankings %}
-                <tr onclick="location.href=`{% url 'team-detail' ranking.team.country_code %}`"
-                    style="cursor: pointer;">
+                <tr>
                     <td class="col-1 text-center pe-0 align-middle small">
                         {% if ranking.rank_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
@@ -140,7 +145,7 @@
                                 </span>
                         {% endif %}
                     </td>
-                    <td class="text-center align-middle col-1 py-2 ps-3">
+                    <td class="text-center align-middle col-1 py-0 ps-3">
                         <span style="display: block; font-weight: 500; width: 40px !important; padding: 3px 5px">
                             {{ ranking.current_rank }}
                         </span>

@@ -28,7 +28,7 @@ class NavLinkSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return ['competition_list', 'game_list', 'statistics']
+        return ['statistics']
 
     def location(self, item):
         return reverse_lazy(item)
@@ -37,3 +37,14 @@ class NavLinkSitemap(Sitemap):
     def lastmod(obj):
         today = datetime.today()
         return datetime(year=today.year, month=today.month, day=1)
+
+
+class TeamSitemap(Sitemap):
+    changefreq = "daily"
+    priority = 0.9
+
+    def items(self):
+        return Team.objects.all()
+
+    def location(self, item):
+        return reverse_lazy('team-detail', kwargs={'country_code': item.country_code})

@@ -44,5 +44,8 @@ class Ranking(models.Model):
             return self.current_points - self.previous_points
         return None
 
+    def games(self, period: Period):
+        return self.home_games.filter(period=period).all() | self.away_games.filter(period=period).all()
+
     def __str__(self):
         return f'Ranking for {self.team} in {self.period}'
