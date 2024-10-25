@@ -114,11 +114,11 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(minute='20', hour='*/2'),
     },
     'ranking': {
-        'task': 'apps.ranking.tasks.ranking',
+        'task': 'apps.ranking.tasks.ranking_everyday',
         'schedule': crontab(minute='30', hour='*/2'),
     },
     'create-ranking-for-new-period': {
         'task': 'apps.ranking.tasks.create_ranking_for_new_period',
-        'shedule': crontab(minute='0', hour='0'),
+        'schedule': crontab(minute='0', hour='0'),
     }
 }
