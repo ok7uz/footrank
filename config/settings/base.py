@@ -10,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 LOCAL_APPS = [
-    'apps.ranking.apps.RankingConfig'
+    'apps.team.apps.TeamConfig',
+    'apps.ranking.apps.RankingConfig',
+    'apps.game.apps.GameConfig'
 ]
 
 THIRD_PARTY_APPS = [
@@ -45,7 +47,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,5 +116,9 @@ CELERY_BEAT_SCHEDULE = {
     'ranking': {
         'task': 'apps.ranking.tasks.ranking',
         'schedule': crontab(minute='30', hour='*/2'),
+    },
+    'create-ranking-for-new-period': {
+        'task': 'apps.ranking.tasks.create_ranking_for_new_period',
+        'shedule': crontab(minute='0', hour='0'),
     }
 }

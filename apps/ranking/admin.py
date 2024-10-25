@@ -1,9 +1,13 @@
 from django.contrib import admin
 
-from .models import Competition, Game, Team, League
+from apps.ranking import models
 
 
-admin.site.register(Competition)
-admin.site.register(Game)
-admin.site.register(Team)
-admin.site.register(League)
+@admin.register(models.Ranking)
+class RankingAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(models.Period)
+class PeriodAdmin(admin.ModelAdmin):
+    pass

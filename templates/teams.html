@@ -10,18 +10,24 @@
 
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
-        <p class="text-center fs-2">Countries</p>
-        <hr>
+        <h1 class="text-center fs-3"  style="color: #1F51FF">Teams Info</h1>
+        <h2 class="text-center fw-normal fs-6">
+    {% if conf %}
+        Latest {{ conf }} Team Rankings: Flags, API IDs, and More
+    {% else %}
+        Explore Team Rankings: Flags, API IDs, and Detailed Information
+    {% endif %}
+</h2><hr>
 
         <p class="text-center fs-6 py-3">
-            <a href="{% url 'country_list' %}"
+            <a href="{% url 'teams' %}"
                class="text-decoration-none text-dark"
                style="{% if not request.GET.confederation %}font-weight: 500; color: #014a7f !important;{% endif %}">
                 ALL
             </a>
 
             {% for confederation in confederations %}
-                <a href="{% url 'country_list' %}?confederation={{ confederation.0 }}"
+                <a href="{% url 'teams' %}?confederation={{ confederation.0 }}"
                    class="ms-2 text-decoration-none text-dark"
                    style="{% if request.GET.confederation == confederation.0 %}font-weight: 500; color: #014a7f !important;{% endif %}">
                     {{ confederation.0 }}
@@ -44,7 +50,7 @@
                         <img src="{{ team.flag_url }}"
                              alt="{{ team.name }}"
                              class="border border-dark"
-                             style="width: 36px; height: 24px">
+                             style="width: 36px; height: 24px; border: 1px solid black; background: #c5aa6a; border-radius: 3px">
                     </td>
                     <td class="col-5 align-middle">
                         <span class="ms-2 align-items-center text-dark" style="font-size: 1rem">{{ team.name }}</span>
@@ -138,9 +144,9 @@
 
     <!-- Paginator -->
     <div class="text-center mb-4">
-        <a class="btn py-0" href="{% url 'country_list' %}" style="border: 1px solid #014a7f; color: #014a7f; {% if not request.GET.page %}background: #014a7f; color: white;{% endif %}">1</a>
-        <a class="btn py-0" href="{% url 'country_list' %}?page=2" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '2' %}background: #014a7f; color: white;{% endif %}">2</a>
-        <a class="btn py-0" href="{% url 'country_list' %}?page=3" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '3' %}background: #014a7f; color: white;{% endif %}">3</a>
+        <a class="btn py-0" href="{% url 'teams' %}" style="border: 1px solid #014a7f; color: #014a7f; {% if not request.GET.page %}background: #014a7f; color: white;{% endif %}">1</a>
+        <a class="btn py-0" href="{% url 'teams' %}?page=2" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '2' %}background: #014a7f; color: white;{% endif %}">2</a>
+        <a class="btn py-0" href="{% url 'teams' %}?page=3" style="border: 1px solid #014a7f; color: #014a7f; {% if request.GET.page == '3' %}background: #014a7f; color: white;{% endif %}">3</a>
     </div>
 
 {% endblock %}

@@ -1,0 +1,2956 @@
+[
+    {
+        "model": "ranking.team",
+        "pk": "AFG",
+        "fields": {
+            "name": "Afghanistan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AFG",
+            "current_rank": 151,
+            "previous_rank": 152,
+            "current_points": "1034.37000",
+            "previous_points": "1034.37000",
+            "confederation": "AFC",
+            "api_id": 1553
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "AIA",
+        "fields": {
+            "name": "Anguilla",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AIA",
+            "current_rank": 209,
+            "previous_rank": 209,
+            "current_points": "769.31041",
+            "previous_points": "782.08000",
+            "confederation": "CONCACAF",
+            "api_id": 8150
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ALB",
+        "fields": {
+            "name": "Albania",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ALB",
+            "current_rank": 65,
+            "previous_rank": 67,
+            "current_points": "1379.28508",
+            "previous_points": "1377.91000",
+            "confederation": "UEFA",
+            "api_id": 778
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ALG",
+        "fields": {
+            "name": "Algeria",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ALG",
+            "current_rank": 37,
+            "previous_rank": 41,
+            "current_points": "1496.93395",
+            "previous_points": "1486.03000",
+            "confederation": "CAF",
+            "api_id": 1532
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "AND",
+        "fields": {
+            "name": "Andorra",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AND",
+            "current_rank": 170,
+            "previous_rank": 169,
+            "current_points": "977.96093",
+            "previous_points": "981.70000",
+            "confederation": "UEFA",
+            "api_id": 1110
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ANG",
+        "fields": {
+            "name": "Angola",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ANG",
+            "current_rank": 82,
+            "previous_rank": 85,
+            "current_points": "1298.74861",
+            "previous_points": "1281.09000",
+            "confederation": "CAF",
+            "api_id": 1529
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ARG",
+        "fields": {
+            "name": "Argentina",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ARG",
+            "current_rank": 1,
+            "previous_rank": 1,
+            "current_points": "1883.50184",
+            "previous_points": "1889.02000",
+            "confederation": "CONMEBOL",
+            "api_id": 26
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ARM",
+        "fields": {
+            "name": "Armenia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ARM",
+            "current_rank": 99,
+            "previous_rank": 96,
+            "current_points": "1228.45002",
+            "previous_points": "1230.43000",
+            "confederation": "UEFA",
+            "api_id": 1094
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ARU",
+        "fields": {
+            "name": "Aruba",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ARU",
+            "current_rank": 194,
+            "previous_rank": 194,
+            "current_points": "868.40000",
+            "previous_points": "868.40000",
+            "confederation": "CONCACAF",
+            "api_id": 8232
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ASA",
+        "fields": {
+            "name": "American Samoa",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ASA",
+            "current_rank": 189,
+            "previous_rank": 189,
+            "current_points": "883.17000",
+            "previous_points": "883.17000",
+            "confederation": "OFC",
+            "api_id": 8173
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ATG",
+        "fields": {
+            "name": "Antigua and Barbuda",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ATG",
+            "current_rank": 156,
+            "previous_rank": 151,
+            "current_points": "1020.57834",
+            "previous_points": "1034.71000",
+            "confederation": "CONCACAF",
+            "api_id": 5526
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "AUS",
+        "fields": {
+            "name": "Australia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AUS",
+            "current_rank": 24,
+            "previous_rank": 25,
+            "current_points": "1552.77191",
+            "previous_points": "1544.30000",
+            "confederation": "AFC",
+            "api_id": 20
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "AUT",
+        "fields": {
+            "name": "Austria",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AUT",
+            "current_rank": 23,
+            "previous_rank": 22,
+            "current_points": "1589.16661",
+            "previous_points": "1580.37000",
+            "confederation": "UEFA",
+            "api_id": 775
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "AZE",
+        "fields": {
+            "name": "Azerbaijan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/AZE",
+            "current_rank": 118,
+            "previous_rank": 113,
+            "current_points": "1161.79459",
+            "previous_points": "1173.15000",
+            "confederation": "UEFA",
+            "api_id": 1096
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BAH",
+        "fields": {
+            "name": "Bahamas",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BAH",
+            "current_rank": 205,
+            "previous_rank": 205,
+            "current_points": "818.57932",
+            "previous_points": "817.25000",
+            "confederation": "CONCACAF",
+            "api_id": 5157
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BAN",
+        "fields": {
+            "name": "Bangladesh",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BAN",
+            "current_rank": 185,
+            "previous_rank": 186,
+            "current_points": "896.71000",
+            "previous_points": "896.71000",
+            "confederation": "AFC",
+            "api_id": 1560
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BDI",
+        "fields": {
+            "name": "Burundi",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BDI",
+            "current_rank": 139,
+            "previous_rank": 136,
+            "current_points": "1089.49250",
+            "previous_points": "1101.79000",
+            "confederation": "CAF",
+            "api_id": 1528
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BEL",
+        "fields": {
+            "name": "Belgium",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BEL",
+            "current_rank": 6,
+            "previous_rank": 6,
+            "current_points": "1761.26632",
+            "previous_points": "1768.14000",
+            "confederation": "UEFA",
+            "api_id": 1
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BEN",
+        "fields": {
+            "name": "Benin",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BEN",
+            "current_rank": 95,
+            "previous_rank": 89,
+            "current_points": "1250.96745",
+            "previous_points": "1257.69000",
+            "confederation": "CAF",
+            "api_id": 1516
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BER",
+        "fields": {
+            "name": "Bermuda",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BER",
+            "current_rank": 167,
+            "previous_rank": 170,
+            "current_points": "986.52733",
+            "previous_points": "973.34000",
+            "confederation": "CONCACAF",
+            "api_id": 5158
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BFA",
+        "fields": {
+            "name": "Burkina Faso",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BFA",
+            "current_rank": 62,
+            "previous_rank": 63,
+            "current_points": "1399.79750",
+            "previous_points": "1387.50000",
+            "confederation": "CAF",
+            "api_id": 1502
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BHR",
+        "fields": {
+            "name": "Bahrain",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BHR",
+            "current_rank": 76,
+            "previous_rank": 76,
+            "current_points": "1313.79448",
+            "previous_points": "1315.49000",
+            "confederation": "AFC",
+            "api_id": 1547
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BHU",
+        "fields": {
+            "name": "Bhutan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BHU",
+            "current_rank": 182,
+            "previous_rank": 184,
+            "current_points": "904.06000",
+            "previous_points": "904.06000",
+            "confederation": "AFC",
+            "api_id": 1540
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BIH",
+        "fields": {
+            "name": "Bosnia and Herzegovina",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BIH",
+            "current_rank": 74,
+            "previous_rank": 75,
+            "current_points": "1324.43284",
+            "previous_points": "1332.39000",
+            "confederation": "UEFA",
+            "api_id": 1113
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BLR",
+        "fields": {
+            "name": "Belarus",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BLR",
+            "current_rank": 97,
+            "previous_rank": 97,
+            "current_points": "1231.09624",
+            "previous_points": "1229.07000",
+            "confederation": "UEFA",
+            "api_id": 1100
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BLZ",
+        "fields": {
+            "name": "Belize",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BLZ",
+            "current_rank": 179,
+            "previous_rank": 182,
+            "current_points": "925.02083",
+            "previous_points": "913.42000",
+            "confederation": "CONCACAF",
+            "api_id": 5528
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BOL",
+        "fields": {
+            "name": "Bolivia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BOL",
+            "current_rank": 79,
+            "previous_rank": 83,
+            "current_points": "1312.36621",
+            "previous_points": "1293.76000",
+            "confederation": "CONMEBOL",
+            "api_id": 2381
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BOT",
+        "fields": {
+            "name": "Botswana",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BOT",
+            "current_rank": 140,
+            "previous_rank": 147,
+            "current_points": "1088.45473",
+            "previous_points": "1050.15000",
+            "confederation": "CAF",
+            "api_id": 1520
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BRA",
+        "fields": {
+            "name": "Brazil",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BRA",
+            "current_rank": 5,
+            "previous_rank": 5,
+            "current_points": "1784.36849",
+            "previous_points": "1772.02000",
+            "confederation": "CONMEBOL",
+            "api_id": 6
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BRB",
+        "fields": {
+            "name": "Barbados",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BRB",
+            "current_rank": 173,
+            "previous_rank": 175,
+            "current_points": "955.20582",
+            "previous_points": "944.10000",
+            "confederation": "CONCACAF",
+            "api_id": 5527
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BRU",
+        "fields": {
+            "name": "Brunei Darussalam",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BRU",
+            "current_rank": 184,
+            "previous_rank": 183,
+            "current_points": "900.75046",
+            "previous_points": "906.83000",
+            "confederation": "AFC",
+            "api_id": 5538
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "BUL",
+        "fields": {
+            "name": "Bulgaria",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/BUL",
+            "current_rank": 84,
+            "previous_rank": 81,
+            "current_points": "1295.11197",
+            "previous_points": "1302.68000",
+            "confederation": "UEFA",
+            "api_id": 1103
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CAM",
+        "fields": {
+            "name": "Cambodia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CAM",
+            "current_rank": 181,
+            "previous_rank": 180,
+            "current_points": "921.19629",
+            "previous_points": "919.70000",
+            "confederation": "AFC",
+            "api_id": 1543
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CAN",
+        "fields": {
+            "name": "Canada",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CAN",
+            "current_rank": 35,
+            "previous_rank": 38,
+            "current_points": "1507.27603",
+            "previous_points": "1502.31000",
+            "confederation": "CONCACAF",
+            "api_id": 5529
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CAY",
+        "fields": {
+            "name": "Cayman Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CAY",
+            "current_rank": 195,
+            "previous_rank": 195,
+            "current_points": "866.71341",
+            "previous_points": "857.37000",
+            "confederation": "CONCACAF",
+            "api_id": 8169
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CGO",
+        "fields": {
+            "name": "Congo",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CGO",
+            "current_rank": 120,
+            "previous_rank": 117,
+            "current_points": "1159.41897",
+            "previous_points": "1160.33000",
+            "confederation": "CAF",
+            "api_id": 1517
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CHA",
+        "fields": {
+            "name": "Chad",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CHA",
+            "current_rank": 177,
+            "previous_rank": 177,
+            "current_points": "933.39240",
+            "previous_points": "932.44000",
+            "confederation": "CAF",
+            "api_id": 1523
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CHI",
+        "fields": {
+            "name": "Chile",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CHI",
+            "current_rank": 53,
+            "previous_rank": 49,
+            "current_points": "1455.22465",
+            "previous_points": "1467.98000",
+            "confederation": "CONMEBOL",
+            "api_id": 2383
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CHN",
+        "fields": {
+            "name": "China PR",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CHN",
+            "current_rank": 92,
+            "previous_rank": 91,
+            "current_points": "1257.28986",
+            "previous_points": "1253.77000",
+            "confederation": "AFC",
+            "api_id": 1566
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CIV",
+        "fields": {
+            "name": "C\u00c3\u00b4te d'Ivoire",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CIV",
+            "current_rank": 40,
+            "previous_rank": 33,
+            "current_points": "1493.56732",
+            "previous_points": "1509.12000",
+            "confederation": "CAF",
+            "api_id": 1501
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CMR",
+        "fields": {
+            "name": "Cameroon",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CMR",
+            "current_rank": 49,
+            "previous_rank": 53,
+            "current_points": "1472.11365",
+            "previous_points": "1458.51000",
+            "confederation": "CAF",
+            "api_id": 1530
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "COD",
+        "fields": {
+            "name": "Congo DR",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/COD",
+            "current_rank": 57,
+            "previous_rank": 58,
+            "current_points": "1431.30544",
+            "previous_points": "1416.91000",
+            "confederation": "CAF",
+            "api_id": 1508
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "COK",
+        "fields": {
+            "name": "Cook Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/COK",
+            "current_rank": 191,
+            "previous_rank": 191,
+            "current_points": "877.53000",
+            "previous_points": "877.53000",
+            "confederation": "OFC",
+            "api_id": 8174
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "COL",
+        "fields": {
+            "name": "Colombia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/COL",
+            "current_rank": 10,
+            "previous_rank": 9,
+            "current_points": "1724.37638",
+            "previous_points": "1738.72000",
+            "confederation": "CONMEBOL",
+            "api_id": 8
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "COM",
+        "fields": {
+            "name": "Comoros",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/COM",
+            "current_rank": 108,
+            "previous_rank": 118,
+            "current_points": "1185.98289",
+            "previous_points": "1159.64000",
+            "confederation": "CAF",
+            "api_id": 1524
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CPV",
+        "fields": {
+            "name": "Cabo Verde",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CPV",
+            "current_rank": 72,
+            "previous_rank": 65,
+            "current_points": "1340.86527",
+            "previous_points": "1379.17000",
+            "confederation": "CAF",
+            "api_id": 1533
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CRC",
+        "fields": {
+            "name": "Costa Rica",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CRC",
+            "current_rank": 50,
+            "previous_rank": 50,
+            "current_points": "1465.57040",
+            "previous_points": "1466.08000",
+            "confederation": "CONCACAF",
+            "api_id": 29
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CRO",
+        "fields": {
+            "name": "Croatia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CRO",
+            "current_rank": 12,
+            "previous_rank": 12,
+            "current_points": "1701.36296",
+            "previous_points": "1699.60000",
+            "confederation": "UEFA",
+            "api_id": 3
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CTA",
+        "fields": {
+            "name": "Central African Republic",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CTA",
+            "current_rank": 129,
+            "previous_rank": 128,
+            "current_points": "1125.26307",
+            "previous_points": "1130.70000",
+            "confederation": "CAF",
+            "api_id": 1527
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CUB",
+        "fields": {
+            "name": "Cuba",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CUB",
+            "current_rank": 166,
+            "previous_rank": 165,
+            "current_points": "990.17474",
+            "previous_points": "991.73000",
+            "confederation": "CONCACAF",
+            "api_id": 2388
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CUW",
+        "fields": {
+            "name": "Cura\u00c3\u00a7ao",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CUW",
+            "current_rank": 90,
+            "previous_rank": 88,
+            "current_points": "1260.86688",
+            "previous_points": "1261.38000",
+            "confederation": "CONCACAF",
+            "api_id": 5530
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CYP",
+        "fields": {
+            "name": "Cyprus",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CYP",
+            "current_rank": 127,
+            "previous_rank": 123,
+            "current_points": "1127.51455",
+            "previous_points": "1137.06000",
+            "confederation": "UEFA",
+            "api_id": 1106
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "CZE",
+        "fields": {
+            "name": "Czechia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/CZE",
+            "current_rank": 45,
+            "previous_rank": 46,
+            "current_points": "1480.39303",
+            "previous_points": "1473.19000",
+            "confederation": "UEFA",
+            "api_id": 770
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "DEN",
+        "fields": {
+            "name": "Denmark",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/DEN",
+            "current_rank": 21,
+            "previous_rank": 20,
+            "current_points": "1617.33438",
+            "previous_points": "1621.70000",
+            "confederation": "UEFA",
+            "api_id": 21
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "DJI",
+        "fields": {
+            "name": "Djibouti",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/DJI",
+            "current_rank": 192,
+            "previous_rank": 192,
+            "current_points": "875.13000",
+            "previous_points": "875.13000",
+            "confederation": "CAF",
+            "api_id": 1535
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "DMA",
+        "fields": {
+            "name": "Dominica",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/DMA",
+            "current_rank": 183,
+            "previous_rank": 181,
+            "current_points": "903.54267",
+            "previous_points": "916.73000",
+            "confederation": "CONCACAF",
+            "api_id": 5531
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "DOM",
+        "fields": {
+            "name": "Dominican Republic",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/DOM",
+            "current_rank": 142,
+            "previous_rank": 146,
+            "current_points": "1071.88166",
+            "previous_points": "1057.75000",
+            "confederation": "CONCACAF",
+            "api_id": 5532
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ECU",
+        "fields": {
+            "name": "Ecuador",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ECU",
+            "current_rank": 27,
+            "previous_rank": 27,
+            "current_points": "1536.32271",
+            "previous_points": "1535.43000",
+            "confederation": "CONMEBOL",
+            "api_id": 2382
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "EGY",
+        "fields": {
+            "name": "Egypt",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/EGY",
+            "current_rank": 30,
+            "previous_rank": 31,
+            "current_points": "1526.24505",
+            "previous_points": "1515.64000",
+            "confederation": "CAF",
+            "api_id": 32
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ENG",
+        "fields": {
+            "name": "England",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ENG",
+            "current_rank": 4,
+            "previous_rank": 4,
+            "current_points": "1807.83159",
+            "previous_points": "1817.28000",
+            "confederation": "UEFA",
+            "api_id": 10
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "EQG",
+        "fields": {
+            "name": "Equatorial Guinea",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/EQG",
+            "current_rank": 88,
+            "previous_rank": 94,
+            "current_points": "1266.68019",
+            "previous_points": "1250.57000",
+            "confederation": "CAF",
+            "api_id": 1521
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ERI",
+        "fields": {
+            "name": "Eritrea",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ERI",
+            "current_rank": null,
+            "previous_rank": null,
+            "current_points": "855.56000",
+            "previous_points": "855.56000",
+            "confederation": "CAF",
+            "api_id": 1498
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ESP",
+        "fields": {
+            "name": "Spain",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ESP",
+            "current_rank": 3,
+            "previous_rank": 3,
+            "current_points": "1844.32641",
+            "previous_points": "1836.42000",
+            "confederation": "UEFA",
+            "api_id": 9
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "EST",
+        "fields": {
+            "name": "Estonia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/EST",
+            "current_rank": 124,
+            "previous_rank": 122,
+            "current_points": "1145.52297",
+            "previous_points": "1140.39000",
+            "confederation": "UEFA",
+            "api_id": 1101
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ETH",
+        "fields": {
+            "name": "Ethiopia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ETH",
+            "current_rank": 148,
+            "previous_rank": 145,
+            "current_points": "1049.28208",
+            "previous_points": "1063.44000",
+            "confederation": "CAF",
+            "api_id": 1506
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "FIJ",
+        "fields": {
+            "name": "Fiji",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/FIJ",
+            "current_rank": 146,
+            "previous_rank": 150,
+            "current_points": "1051.40879",
+            "previous_points": "1038.29000",
+            "confederation": "OFC",
+            "api_id": 5160
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "FIN",
+        "fields": {
+            "name": "Finland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/FIN",
+            "current_rank": 66,
+            "previous_rank": 64,
+            "current_points": "1374.57901",
+            "previous_points": "1384.36000",
+            "confederation": "UEFA",
+            "api_id": 1099
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "FRA",
+        "fields": {
+            "name": "France",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/FRA",
+            "current_rank": 2,
+            "previous_rank": 2,
+            "current_points": "1859.84682",
+            "previous_points": "1851.92000",
+            "confederation": "UEFA",
+            "api_id": 2
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "FRO",
+        "fields": {
+            "name": "Faroe Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/FRO",
+            "current_rank": 138,
+            "previous_rank": 140,
+            "current_points": "1091.58337",
+            "previous_points": "1089.51000",
+            "confederation": "UEFA",
+            "api_id": 1098
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GAB",
+        "fields": {
+            "name": "Gabon",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GAB",
+            "current_rank": 85,
+            "previous_rank": 84,
+            "current_points": "1294.11149",
+            "previous_points": "1292.88000",
+            "confederation": "CAF",
+            "api_id": 1503
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GAM",
+        "fields": {
+            "name": "The Gambia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GAM",
+            "current_rank": 128,
+            "previous_rank": 135,
+            "current_points": "1125.61176",
+            "previous_points": "1109.05000",
+            "confederation": "CAF",
+            "api_id": 1492
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GEO",
+        "fields": {
+            "name": "Georgia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GEO",
+            "current_rank": 67,
+            "previous_rank": 66,
+            "current_points": "1365.56520",
+            "previous_points": "1378.22000",
+            "confederation": "UEFA",
+            "api_id": 1104
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GER",
+        "fields": {
+            "name": "Germany",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GER",
+            "current_rank": 11,
+            "previous_rank": 13,
+            "current_points": "1703.58301",
+            "previous_points": "1692.19000",
+            "confederation": "UEFA",
+            "api_id": 25
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GHA",
+        "fields": {
+            "name": "Ghana",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GHA",
+            "current_rank": 73,
+            "previous_rank": 70,
+            "current_points": "1338.73018",
+            "previous_points": "1360.43000",
+            "confederation": "CAF",
+            "api_id": 1504
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GIB",
+        "fields": {
+            "name": "Gibraltar",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GIB",
+            "current_rank": 197,
+            "previous_rank": 198,
+            "current_points": "848.31910",
+            "previous_points": "842.40000",
+            "confederation": "UEFA",
+            "api_id": 1093
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GNB",
+        "fields": {
+            "name": "Guinea-Bissau",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GNB",
+            "current_rank": 116,
+            "previous_rank": 115,
+            "current_points": "1166.34199",
+            "previous_points": "1166.02000",
+            "confederation": "CAF",
+            "api_id": 1513
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GRE",
+        "fields": {
+            "name": "Greece",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GRE",
+            "current_rank": 42,
+            "previous_rank": 48,
+            "current_points": "1487.42785",
+            "previous_points": "1469.18000",
+            "confederation": "UEFA",
+            "api_id": 1117
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GRN",
+        "fields": {
+            "name": "Grenada",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GRN",
+            "current_rank": 175,
+            "previous_rank": 173,
+            "current_points": "947.21312",
+            "previous_points": "946.70000",
+            "confederation": "CONCACAF",
+            "api_id": 5533
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GUA",
+        "fields": {
+            "name": "Guatemala",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GUA",
+            "current_rank": 104,
+            "previous_rank": 107,
+            "current_points": "1201.34675",
+            "previous_points": "1200.43000",
+            "confederation": "CONCACAF",
+            "api_id": 5161
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GUI",
+        "fields": {
+            "name": "Guinea",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GUI",
+            "current_rank": 78,
+            "previous_rank": 82,
+            "current_points": "1312.45792",
+            "previous_points": "1298.30000",
+            "confederation": "CAF",
+            "api_id": 1509
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GUM",
+        "fields": {
+            "name": "Guam",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GUM",
+            "current_rank": 204,
+            "previous_rank": 204,
+            "current_points": "821.91000",
+            "previous_points": "821.91000",
+            "confederation": "AFC",
+            "api_id": 8119
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "GUY",
+        "fields": {
+            "name": "Guyana",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/GUY",
+            "current_rank": 161,
+            "previous_rank": 156,
+            "current_points": "1008.68618",
+            "previous_points": "1019.99000",
+            "confederation": "CONCACAF",
+            "api_id": 5162
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "HAI",
+        "fields": {
+            "name": "Haiti",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/HAI",
+            "current_rank": 86,
+            "previous_rank": 86,
+            "current_points": "1278.56000",
+            "previous_points": "1278.56000",
+            "confederation": "CONCACAF",
+            "api_id": 2386
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "HKG",
+        "fields": {
+            "name": "Hong Kong, China",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/HKG",
+            "current_rank": 158,
+            "previous_rank": 157,
+            "current_points": "1015.09658",
+            "previous_points": "1017.66000",
+            "confederation": "AFC",
+            "api_id": 4460
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "HON",
+        "fields": {
+            "name": "Honduras",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/HON",
+            "current_rank": 77,
+            "previous_rank": 77,
+            "current_points": "1312.65799",
+            "previous_points": "1311.30000",
+            "confederation": "CONCACAF",
+            "api_id": 4672
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "HUN",
+        "fields": {
+            "name": "Hungary",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/HUN",
+            "current_rank": 32,
+            "previous_rank": 32,
+            "current_points": "1519.33616",
+            "previous_points": "1511.06000",
+            "confederation": "UEFA",
+            "api_id": 769
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "IDN",
+        "fields": {
+            "name": "Indonesia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/IDN",
+            "current_rank": 130,
+            "previous_rank": 129,
+            "current_points": "1118.86966",
+            "previous_points": "1124.17000",
+            "confederation": "AFC",
+            "api_id": 1571
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "IND",
+        "fields": {
+            "name": "India",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/IND",
+            "current_rank": 125,
+            "previous_rank": 126,
+            "current_points": "1133.78704",
+            "previous_points": "1133.52000",
+            "confederation": "AFC",
+            "api_id": 1537
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "IRL",
+        "fields": {
+            "name": "Republic of Ireland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/IRL",
+            "current_rank": 63,
+            "previous_rank": 62,
+            "current_points": "1395.61155",
+            "previous_points": "1394.63000",
+            "confederation": "UEFA",
+            "api_id": 776
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "IRN",
+        "fields": {
+            "name": "IR Iran",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/IRN",
+            "current_rank": 19,
+            "previous_rank": 19,
+            "current_points": "1627.58475",
+            "previous_points": "1622.92000",
+            "confederation": "AFC",
+            "api_id": 22
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "IRQ",
+        "fields": {
+            "name": "Iraq",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/IRQ",
+            "current_rank": 56,
+            "previous_rank": 55,
+            "current_points": "1434.39383",
+            "previous_points": "1435.90000",
+            "confederation": "AFC",
+            "api_id": 1567
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ISL",
+        "fields": {
+            "name": "Iceland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ISL",
+            "current_rank": 69,
+            "previous_rank": 71,
+            "current_points": "1353.18028",
+            "previous_points": "1355.75000",
+            "confederation": "UEFA",
+            "api_id": 18
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ISR",
+        "fields": {
+            "name": "Israel",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ISR",
+            "current_rank": 81,
+            "previous_rank": 79,
+            "current_points": "1303.65720",
+            "previous_points": "1307.80000",
+            "confederation": "UEFA",
+            "api_id": 1116
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ITA",
+        "fields": {
+            "name": "Italy",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ITA",
+            "current_rank": 9,
+            "previous_rank": 10,
+            "current_points": "1729.39966",
+            "previous_points": "1726.31000",
+            "confederation": "UEFA",
+            "api_id": 768
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "JAM",
+        "fields": {
+            "name": "Jamaica",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/JAM",
+            "current_rank": 61,
+            "previous_rank": 61,
+            "current_points": "1405.35674",
+            "previous_points": "1402.95000",
+            "confederation": "CONCACAF",
+            "api_id": 2385
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "JOR",
+        "fields": {
+            "name": "Jordan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/JOR",
+            "current_rank": 64,
+            "previous_rank": 68,
+            "current_points": "1380.74331",
+            "previous_points": "1377.52000",
+            "confederation": "AFC",
+            "api_id": 1548
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "JPN",
+        "fields": {
+            "name": "Japan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/JPN",
+            "current_rank": 15,
+            "previous_rank": 16,
+            "current_points": "1645.09400",
+            "previous_points": "1639.60000",
+            "confederation": "AFC",
+            "api_id": 12
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KAZ",
+        "fields": {
+            "name": "Kazakhstan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KAZ",
+            "current_rank": 107,
+            "previous_rank": 109,
+            "current_points": "1186.45932",
+            "previous_points": "1193.21000",
+            "confederation": "UEFA",
+            "api_id": 1095
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KEN",
+        "fields": {
+            "name": "Kenya",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KEN",
+            "current_rank": 106,
+            "previous_rank": 102,
+            "current_points": "1195.35635",
+            "previous_points": "1208.96000",
+            "confederation": "CAF",
+            "api_id": 1511
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KGZ",
+        "fields": {
+            "name": "Kyrgyz Republic",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KGZ",
+            "current_rank": 103,
+            "previous_rank": 106,
+            "current_points": "1207.08236",
+            "previous_points": "1201.11000",
+            "confederation": "AFC",
+            "api_id": 1554
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KOR",
+        "fields": {
+            "name": "Korea Republic",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KOR",
+            "current_rank": 22,
+            "previous_rank": 23,
+            "current_points": "1589.92637",
+            "previous_points": "1572.61000",
+            "confederation": "AFC",
+            "api_id": 17
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KOS",
+        "fields": {
+            "name": "Kosovo",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KOS",
+            "current_rank": 101,
+            "previous_rank": 104,
+            "current_points": "1218.21721",
+            "previous_points": "1205.96000",
+            "confederation": "UEFA",
+            "api_id": 1111
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KSA",
+        "fields": {
+            "name": "Saudi Arabia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KSA",
+            "current_rank": 59,
+            "previous_rank": 56,
+            "current_points": "1422.67009",
+            "previous_points": "1433.16000",
+            "confederation": "AFC",
+            "api_id": 23
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "KUW",
+        "fields": {
+            "name": "Kuwait",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/KUW",
+            "current_rank": 135,
+            "previous_rank": 134,
+            "current_points": "1106.41862",
+            "previous_points": "1111.62000",
+            "confederation": "AFC",
+            "api_id": 1570
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LAO",
+        "fields": {
+            "name": "Laos",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LAO",
+            "current_rank": 187,
+            "previous_rank": 187,
+            "current_points": "889.62000",
+            "previous_points": "889.62000",
+            "confederation": "AFC",
+            "api_id": 1558
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LBN",
+        "fields": {
+            "name": "Lebanon",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LBN",
+            "current_rank": 115,
+            "previous_rank": 114,
+            "current_points": "1167.49000",
+            "previous_points": "1167.49000",
+            "confederation": "AFC",
+            "api_id": 1551
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LBR",
+        "fields": {
+            "name": "Liberia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LBR",
+            "current_rank": 149,
+            "previous_rank": 143,
+            "current_points": "1048.85981",
+            "previous_points": "1064.97000",
+            "confederation": "CAF",
+            "api_id": 1525
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LBY",
+        "fields": {
+            "name": "Libya",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LBY",
+            "current_rank": 122,
+            "previous_rank": 121,
+            "current_points": "1148.70096",
+            "previous_points": "1153.97000",
+            "confederation": "CAF",
+            "api_id": 1526
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LCA",
+        "fields": {
+            "name": "St Lucia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LCA",
+            "current_rank": 164,
+            "previous_rank": 164,
+            "current_points": "997.86000",
+            "previous_points": "997.86000",
+            "confederation": "CONCACAF",
+            "api_id": 5540
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LES",
+        "fields": {
+            "name": "Lesotho",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LES",
+            "current_rank": 152,
+            "previous_rank": 153,
+            "current_points": "1032.78851",
+            "previous_points": "1034.02000",
+            "confederation": "CAF",
+            "api_id": 1518
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LIE",
+        "fields": {
+            "name": "Liechtenstein",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LIE",
+            "current_rank": 200,
+            "previous_rank": 203,
+            "current_points": "834.15005",
+            "previous_points": "827.19000",
+            "confederation": "UEFA",
+            "api_id": 1107
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LTU",
+        "fields": {
+            "name": "Lithuania",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LTU",
+            "current_rank": 141,
+            "previous_rank": 139,
+            "current_points": "1082.35689",
+            "previous_points": "1090.89000",
+            "confederation": "UEFA",
+            "api_id": 1097
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LUX",
+        "fields": {
+            "name": "Luxembourg",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LUX",
+            "current_rank": 89,
+            "previous_rank": 87,
+            "current_points": "1262.07650",
+            "previous_points": "1261.95000",
+            "confederation": "UEFA",
+            "api_id": 1102
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "LVA",
+        "fields": {
+            "name": "Latvia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/LVA",
+            "current_rank": 137,
+            "previous_rank": 137,
+            "current_points": "1097.88661",
+            "previous_points": "1097.98000",
+            "confederation": "UEFA",
+            "api_id": 1092
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MAC",
+        "fields": {
+            "name": "Macau",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MAC",
+            "current_rank": 193,
+            "previous_rank": 193,
+            "current_points": "871.52000",
+            "previous_points": "871.52000",
+            "confederation": "AFC",
+            "api_id": 4767
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MAD",
+        "fields": {
+            "name": "Madagascar",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MAD",
+            "current_rank": 109,
+            "previous_rank": 108,
+            "current_points": "1179.99824",
+            "previous_points": "1196.56000",
+            "confederation": "CAF",
+            "api_id": 1490
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MAR",
+        "fields": {
+            "name": "Morocco",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MAR",
+            "current_rank": 13,
+            "previous_rank": 14,
+            "current_points": "1681.57693",
+            "previous_points": "1676.14000",
+            "confederation": "CAF",
+            "api_id": 31
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MAS",
+        "fields": {
+            "name": "Malaysia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MAS",
+            "current_rank": 133,
+            "previous_rank": 132,
+            "current_points": "1113.92270",
+            "previous_points": "1117.64000",
+            "confederation": "AFC",
+            "api_id": 1538
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MDA",
+        "fields": {
+            "name": "Moldova",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MDA",
+            "current_rank": 150,
+            "previous_rank": 149,
+            "current_points": "1040.82678",
+            "previous_points": "1042.81000",
+            "confederation": "UEFA",
+            "api_id": 1114
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MDV",
+        "fields": {
+            "name": "Maldives",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MDV",
+            "current_rank": 163,
+            "previous_rank": 163,
+            "current_points": "1003.48000",
+            "previous_points": "1003.48000",
+            "confederation": "AFC",
+            "api_id": 1549
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MEX",
+        "fields": {
+            "name": "Mexico",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MEX",
+            "current_rank": 16,
+            "previous_rank": 17,
+            "current_points": "1640.66299",
+            "previous_points": "1635.66000",
+            "confederation": "CONCACAF",
+            "api_id": 16
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MKD",
+        "fields": {
+            "name": "North Macedonia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MKD",
+            "current_rank": 70,
+            "previous_rank": 72,
+            "current_points": "1351.18000",
+            "previous_points": "1351.18000",
+            "confederation": "UEFA",
+            "api_id": 16061
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MLI",
+        "fields": {
+            "name": "Mali",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MLI",
+            "current_rank": 54,
+            "previous_rank": 54,
+            "current_points": "1454.83801",
+            "previous_points": "1455.16000",
+            "confederation": "CAF",
+            "api_id": 1500
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MLT",
+        "fields": {
+            "name": "Malta",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MLT",
+            "current_rank": 169,
+            "previous_rank": 171,
+            "current_points": "980.49779",
+            "previous_points": "971.89000",
+            "confederation": "UEFA",
+            "api_id": 1112
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MNE",
+        "fields": {
+            "name": "Montenegro",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MNE",
+            "current_rank": 75,
+            "previous_rank": 74,
+            "current_points": "1323.19407",
+            "previous_points": "1332.68000",
+            "confederation": "UEFA",
+            "api_id": 1109
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MNG",
+        "fields": {
+            "name": "Mongolia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MNG",
+            "current_rank": 188,
+            "previous_rank": 188,
+            "current_points": "883.57000",
+            "previous_points": "883.57000",
+            "confederation": "AFC",
+            "api_id": 5534
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MOZ",
+        "fields": {
+            "name": "Mozambique",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MOZ",
+            "current_rank": 98,
+            "previous_rank": 99,
+            "current_points": "1229.00987",
+            "previous_points": "1226.03000",
+            "confederation": "CAF",
+            "api_id": 1512
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MRI",
+        "fields": {
+            "name": "Mauritius",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MRI",
+            "current_rank": 178,
+            "previous_rank": 178,
+            "current_points": "927.57000",
+            "previous_points": "927.57000",
+            "confederation": "CAF",
+            "api_id": 1497
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MSR",
+        "fields": {
+            "name": "Montserrat",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MSR",
+            "current_rank": 180,
+            "previous_rank": 179,
+            "current_points": "924.14000",
+            "previous_points": "924.14000",
+            "confederation": "CONCACAF",
+            "api_id": 8170
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MTN",
+        "fields": {
+            "name": "Mauritania",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MTN",
+            "current_rank": 114,
+            "previous_rank": 112,
+            "current_points": "1168.43495",
+            "previous_points": "1179.04000",
+            "confederation": "CAF",
+            "api_id": 1491
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MWI",
+        "fields": {
+            "name": "Malawi",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MWI",
+            "current_rank": 134,
+            "previous_rank": 133,
+            "current_points": "1111.16033",
+            "previous_points": "1117.42000",
+            "confederation": "CAF",
+            "api_id": 1495
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "MYA",
+        "fields": {
+            "name": "Myanmar",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/MYA",
+            "current_rank": 165,
+            "previous_rank": 167,
+            "current_points": "990.98335",
+            "previous_points": "988.98000",
+            "confederation": "AFC",
+            "api_id": 1556
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NAM",
+        "fields": {
+            "name": "Namibia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NAM",
+            "current_rank": 113,
+            "previous_rank": 105,
+            "current_points": "1173.80475",
+            "previous_points": "1201.30000",
+            "confederation": "CAF",
+            "api_id": 1493
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NCA",
+        "fields": {
+            "name": "Nicaragua",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NCA",
+            "current_rank": 132,
+            "previous_rank": 131,
+            "current_points": "1114.27527",
+            "previous_points": "1118.04000",
+            "confederation": "CONCACAF",
+            "api_id": 5164
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NCL",
+        "fields": {
+            "name": "New Caledonia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NCL",
+            "current_rank": 155,
+            "previous_rank": 160,
+            "current_points": "1020.82825",
+            "previous_points": "1008.92000",
+            "confederation": "OFC",
+            "api_id": 5163
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NED",
+        "fields": {
+            "name": "Netherlands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NED",
+            "current_rank": 8,
+            "previous_rank": 7,
+            "current_points": "1748.23799",
+            "previous_points": "1759.95000",
+            "confederation": "UEFA",
+            "api_id": 1118
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NEP",
+        "fields": {
+            "name": "Nepal",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NEP",
+            "current_rank": 176,
+            "previous_rank": 176,
+            "current_points": "935.93000",
+            "previous_points": "935.93000",
+            "confederation": "AFC",
+            "api_id": 1545
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NGA",
+        "fields": {
+            "name": "Nigeria",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NGA",
+            "current_rank": 36,
+            "previous_rank": 39,
+            "current_points": "1503.28904",
+            "previous_points": "1498.02000",
+            "confederation": "CAF",
+            "api_id": 19
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NIG",
+        "fields": {
+            "name": "Niger",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NIG",
+            "current_rank": 131,
+            "previous_rank": 127,
+            "current_points": "1114.73139",
+            "previous_points": "1132.39000",
+            "confederation": "CAF",
+            "api_id": 1505
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NIR",
+        "fields": {
+            "name": "Northern Ireland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NIR",
+            "current_rank": 71,
+            "previous_rank": 73,
+            "current_points": "1345.05529",
+            "previous_points": "1339.64000",
+            "confederation": "UEFA",
+            "api_id": 771
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NOR",
+        "fields": {
+            "name": "Norway",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NOR",
+            "current_rank": 48,
+            "previous_rank": 47,
+            "current_points": "1473.49963",
+            "previous_points": "1472.16000",
+            "confederation": "UEFA",
+            "api_id": 1090
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "NZL",
+        "fields": {
+            "name": "Aotearoa New Zealand",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/NZL",
+            "current_rank": 91,
+            "previous_rank": 95,
+            "current_points": "1258.10802",
+            "previous_points": "1247.08000",
+            "confederation": "OFC",
+            "api_id": 4673
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "OMA",
+        "fields": {
+            "name": "Oman",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/OMA",
+            "current_rank": 80,
+            "previous_rank": 78,
+            "current_points": "1305.99325",
+            "previous_points": "1309.27000",
+            "confederation": "AFC",
+            "api_id": 1552
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PAK",
+        "fields": {
+            "name": "Pakistan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PAK",
+            "current_rank": 198,
+            "previous_rank": 197,
+            "current_points": "842.59000",
+            "previous_points": "842.59000",
+            "confederation": "AFC",
+            "api_id": 5535
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PAN",
+        "fields": {
+            "name": "Panama",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PAN",
+            "current_rank": 39,
+            "previous_rank": 37,
+            "current_points": "1493.80271",
+            "previous_points": "1502.55000",
+            "confederation": "CONCACAF",
+            "api_id": 11
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PAR",
+        "fields": {
+            "name": "Paraguay",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PAR",
+            "current_rank": 55,
+            "previous_rank": 57,
+            "current_points": "1440.78260",
+            "previous_points": "1423.98000",
+            "confederation": "CONMEBOL",
+            "api_id": 2380
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PER",
+        "fields": {
+            "name": "Peru",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PER",
+            "current_rank": 38,
+            "previous_rank": 43,
+            "current_points": "1494.23395",
+            "previous_points": "1483.20000",
+            "confederation": "CONMEBOL",
+            "api_id": 30
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PHI",
+        "fields": {
+            "name": "Philippines",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PHI",
+            "current_rank": 145,
+            "previous_rank": 148,
+            "current_points": "1053.09226",
+            "previous_points": "1050.03000",
+            "confederation": "AFC",
+            "api_id": 1555
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PLE",
+        "fields": {
+            "name": "Palestine",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PLE",
+            "current_rank": 100,
+            "previous_rank": 98,
+            "current_points": "1218.43462",
+            "previous_points": "1228.99000",
+            "confederation": "AFC",
+            "api_id": 1562
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PNG",
+        "fields": {
+            "name": "Papua New Guinea",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PNG",
+            "current_rank": 171,
+            "previous_rank": 168,
+            "current_points": "972.32175",
+            "previous_points": "984.23000",
+            "confederation": "OFC",
+            "api_id": 8175
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "POL",
+        "fields": {
+            "name": "Poland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/POL",
+            "current_rank": 31,
+            "previous_rank": 30,
+            "current_points": "1523.18898",
+            "previous_points": "1525.08000",
+            "confederation": "UEFA",
+            "api_id": 24
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "POR",
+        "fields": {
+            "name": "Portugal",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/POR",
+            "current_rank": 7,
+            "previous_rank": 8,
+            "current_points": "1752.67767",
+            "previous_points": "1752.14000",
+            "confederation": "UEFA",
+            "api_id": 27
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PRK",
+        "fields": {
+            "name": "Korea DPR",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PRK",
+            "current_rank": 111,
+            "previous_rank": 111,
+            "current_points": "1175.14836",
+            "previous_points": "1183.02000",
+            "confederation": "AFC",
+            "api_id": 1561
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "PUR",
+        "fields": {
+            "name": "Puerto Rico",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/PUR",
+            "current_rank": 153,
+            "previous_rank": 154,
+            "current_points": "1021.62000",
+            "previous_points": "1021.62000",
+            "confederation": "CONCACAF",
+            "api_id": 5539
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "QAT",
+        "fields": {
+            "name": "Qatar",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/QAT",
+            "current_rank": 46,
+            "previous_rank": 44,
+            "current_points": "1478.60017",
+            "previous_points": "1481.69000",
+            "confederation": "AFC",
+            "api_id": 1569
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ROU",
+        "fields": {
+            "name": "Romania",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ROU",
+            "current_rank": 43,
+            "previous_rank": 45,
+            "current_points": "1487.22135",
+            "previous_points": "1481.40000",
+            "confederation": "UEFA",
+            "api_id": 774
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "RSA",
+        "fields": {
+            "name": "South Africa",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/RSA",
+            "current_rank": 60,
+            "previous_rank": 59,
+            "current_points": "1415.98103",
+            "previous_points": "1415.07000",
+            "confederation": "CAF",
+            "api_id": 1531
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "RUS",
+        "fields": {
+            "name": "Russia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/RUS",
+            "current_rank": 34,
+            "previous_rank": 34,
+            "current_points": "1508.73000",
+            "previous_points": "1508.73000",
+            "confederation": "UEFA",
+            "api_id": 4
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "RWA",
+        "fields": {
+            "name": "Rwanda",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/RWA",
+            "current_rank": 126,
+            "previous_rank": 130,
+            "current_points": "1130.04255",
+            "previous_points": "1123.32000",
+            "confederation": "CAF",
+            "api_id": 1514
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SAM",
+        "fields": {
+            "name": "Samoa",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SAM",
+            "current_rank": 186,
+            "previous_rank": 185,
+            "current_points": "890.76801",
+            "previous_points": "900.79000",
+            "confederation": "OFC",
+            "api_id": 8176
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SCO",
+        "fields": {
+            "name": "Scotland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SCO",
+            "current_rank": 51,
+            "previous_rank": 52,
+            "current_points": "1461.34039",
+            "previous_points": "1461.75000",
+            "confederation": "UEFA",
+            "api_id": 1108
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SDN",
+        "fields": {
+            "name": "Sudan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SDN",
+            "current_rank": 110,
+            "previous_rank": 120,
+            "current_points": "1176.19982",
+            "previous_points": "1154.50000",
+            "confederation": "CAF",
+            "api_id": 1510
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SEN",
+        "fields": {
+            "name": "Senegal",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SEN",
+            "current_rank": 20,
+            "previous_rank": 21,
+            "current_points": "1627.12967",
+            "previous_points": "1620.87000",
+            "confederation": "CAF",
+            "api_id": 13
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SEY",
+        "fields": {
+            "name": "Seychelles",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SEY",
+            "current_rank": 201,
+            "previous_rank": 201,
+            "current_points": "831.19000",
+            "previous_points": "831.19000",
+            "confederation": "CAF",
+            "api_id": 1515
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SGP",
+        "fields": {
+            "name": "Singapore",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SGP",
+            "current_rank": 162,
+            "previous_rank": 161,
+            "current_points": "1008.26000",
+            "previous_points": "1008.26000",
+            "confederation": "AFC",
+            "api_id": 1546
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SKN",
+        "fields": {
+            "name": "St Kitts and Nevis",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SKN",
+            "current_rank": 143,
+            "previous_rank": 141,
+            "current_points": "1065.45134",
+            "previous_points": "1068.25000",
+            "confederation": "CONCACAF",
+            "api_id": 5536
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SLE",
+        "fields": {
+            "name": "Sierra Leone",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SLE",
+            "current_rank": 121,
+            "previous_rank": 125,
+            "current_points": "1149.81268",
+            "previous_points": "1134.26000",
+            "confederation": "CAF",
+            "api_id": 1499
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SLV",
+        "fields": {
+            "name": "El Salvador",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SLV",
+            "current_rank": 83,
+            "previous_rank": 80,
+            "current_points": "1297.98504",
+            "previous_points": "1307.04000",
+            "confederation": "CONCACAF",
+            "api_id": 5159
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SMR",
+        "fields": {
+            "name": "San Marino",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SMR",
+            "current_rank": 210,
+            "previous_rank": 210,
+            "current_points": "737.03550",
+            "previous_points": "746.05000",
+            "confederation": "UEFA",
+            "api_id": 1115
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SOL",
+        "fields": {
+            "name": "Solomon Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SOL",
+            "current_rank": 147,
+            "previous_rank": 144,
+            "current_points": "1050.99121",
+            "previous_points": "1064.11000",
+            "confederation": "OFC",
+            "api_id": 5165
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SOM",
+        "fields": {
+            "name": "Somalia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SOM",
+            "current_rank": 202,
+            "previous_rank": 202,
+            "current_points": "829.81000",
+            "previous_points": "829.81000",
+            "confederation": "CAF",
+            "api_id": 8050
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SRB",
+        "fields": {
+            "name": "Serbia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SRB",
+            "current_rank": 33,
+            "previous_rank": 35,
+            "current_points": "1511.16013",
+            "previous_points": "1505.08000",
+            "confederation": "UEFA",
+            "api_id": 14
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SRI",
+        "fields": {
+            "name": "Sri Lanka",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SRI",
+            "current_rank": 203,
+            "previous_rank": 200,
+            "current_points": "829.38665",
+            "previous_points": "831.39000",
+            "confederation": "AFC",
+            "api_id": 5166
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SSD",
+        "fields": {
+            "name": "South Sudan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SSD",
+            "current_rank": 172,
+            "previous_rank": 172,
+            "current_points": "955.67524",
+            "previous_points": "967.83000",
+            "confederation": "CAF",
+            "api_id": 1496
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "STP",
+        "fields": {
+            "name": "S\u00c3\u00a3o Tom\u00c3\u00a9 and Pr\u00c3\u00adncipe",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/STP",
+            "current_rank": 190,
+            "previous_rank": 190,
+            "current_points": "878.09000",
+            "previous_points": "878.09000",
+            "confederation": "CAF",
+            "api_id": 1494
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SUI",
+        "fields": {
+            "name": "Switzerland",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SUI",
+            "current_rank": 17,
+            "previous_rank": 15,
+            "current_points": "1631.37908",
+            "previous_points": "1641.00000",
+            "confederation": "UEFA",
+            "api_id": 15
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SUR",
+        "fields": {
+            "name": "Suriname",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SUR",
+            "current_rank": 136,
+            "previous_rank": 138,
+            "current_points": "1105.28667",
+            "previous_points": "1094.39000",
+            "confederation": "CONCACAF",
+            "api_id": 8171
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SVK",
+        "fields": {
+            "name": "Slovakia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SVK",
+            "current_rank": 41,
+            "previous_rank": 42,
+            "current_points": "1489.88185",
+            "previous_points": "1485.89000",
+            "confederation": "UEFA",
+            "api_id": 773
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SVN",
+        "fields": {
+            "name": "Slovenia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SVN",
+            "current_rank": 52,
+            "previous_rank": 51,
+            "current_points": "1459.59444",
+            "previous_points": "1462.98000",
+            "confederation": "UEFA",
+            "api_id": 1091
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SWE",
+        "fields": {
+            "name": "Sweden",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SWE",
+            "current_rank": 28,
+            "previous_rank": 28,
+            "current_points": "1530.41059",
+            "previous_points": "1528.18000",
+            "confederation": "UEFA",
+            "api_id": 5
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SWZ",
+        "fields": {
+            "name": "Eswatini",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SWZ",
+            "current_rank": 160,
+            "previous_rank": 159,
+            "current_points": "1009.19013",
+            "previous_points": "1012.17000",
+            "confederation": "CAF",
+            "api_id": 2995
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "SYR",
+        "fields": {
+            "name": "Syria",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/SYR",
+            "current_rank": 93,
+            "previous_rank": 92,
+            "current_points": "1252.18301",
+            "previous_points": "1252.91000",
+            "confederation": "AFC",
+            "api_id": 1565
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TAH",
+        "fields": {
+            "name": "Tahiti",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TAH",
+            "current_rank": 159,
+            "previous_rank": 158,
+            "current_points": "1009.51928",
+            "previous_points": "1016.83000",
+            "confederation": "OFC",
+            "api_id": 5167
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TAN",
+        "fields": {
+            "name": "Tanzania",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TAN",
+            "current_rank": 112,
+            "previous_rank": 110,
+            "current_points": "1173.84456",
+            "previous_points": "1188.24000",
+            "confederation": "CAF",
+            "api_id": 1489
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TCA",
+        "fields": {
+            "name": "Turks and Caicos Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TCA",
+            "current_rank": 206,
+            "previous_rank": 206,
+            "current_points": "803.97876",
+            "previous_points": "802.81000",
+            "confederation": "CONCACAF",
+            "api_id": 5169
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TGA",
+        "fields": {
+            "name": "Tonga",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TGA",
+            "current_rank": 199,
+            "previous_rank": 199,
+            "current_points": "835.64000",
+            "previous_points": "835.64000",
+            "confederation": "OFC",
+            "api_id": 5542
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "THA",
+        "fields": {
+            "name": "Thailand",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/THA",
+            "current_rank": 96,
+            "previous_rank": 100,
+            "current_points": "1231.75564",
+            "previous_points": "1223.06000",
+            "confederation": "AFC",
+            "api_id": 1564
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TJK",
+        "fields": {
+            "name": "Tajikistan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TJK",
+            "current_rank": 105,
+            "previous_rank": 103,
+            "current_points": "1196.97909",
+            "previous_points": "1208.01000",
+            "confederation": "AFC",
+            "api_id": 1536
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TKM",
+        "fields": {
+            "name": "Turkmenistan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TKM",
+            "current_rank": 144,
+            "previous_rank": 142,
+            "current_points": "1065.42000",
+            "previous_points": "1065.42000",
+            "confederation": "AFC",
+            "api_id": 1539
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TLS",
+        "fields": {
+            "name": "Timor-Leste",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TLS",
+            "current_rank": 196,
+            "previous_rank": 196,
+            "current_points": "850.82954",
+            "previous_points": "844.75000",
+            "confederation": "AFC",
+            "api_id": 5537
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TOG",
+        "fields": {
+            "name": "Togo",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TOG",
+            "current_rank": 123,
+            "previous_rank": 119,
+            "current_points": "1147.90605",
+            "previous_points": "1158.81000",
+            "confederation": "CAF",
+            "api_id": 1534
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TPE",
+        "fields": {
+            "name": "Chinese Taipei",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TPE",
+            "current_rank": 168,
+            "previous_rank": 166,
+            "current_points": "985.65698",
+            "previous_points": "991.34000",
+            "confederation": "AFC",
+            "api_id": 1557
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TRI",
+        "fields": {
+            "name": "Trinidad and Tobago",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TRI",
+            "current_rank": 102,
+            "previous_rank": 101,
+            "current_points": "1214.80526",
+            "previous_points": "1213.25000",
+            "confederation": "CONCACAF",
+            "api_id": 5168
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TUN",
+        "fields": {
+            "name": "Tunisia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TUN",
+            "current_rank": 47,
+            "previous_rank": 36,
+            "current_points": "1478.51711",
+            "previous_points": "1504.86000",
+            "confederation": "CAF",
+            "api_id": 28
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "TUR",
+        "fields": {
+            "name": "T\u00c3\u00bcrkiye",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/TUR",
+            "current_rank": 26,
+            "previous_rank": 26,
+            "current_points": "1548.14581",
+            "previous_points": "1538.52000",
+            "confederation": "UEFA",
+            "api_id": 777
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "UAE",
+        "fields": {
+            "name": "United Arab Emirates",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/UAE",
+            "current_rank": 68,
+            "previous_rank": 69,
+            "current_points": "1361.34469",
+            "previous_points": "1377.22000",
+            "confederation": "AFC",
+            "api_id": 1563
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "UGA",
+        "fields": {
+            "name": "Uganda",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/UGA",
+            "current_rank": 87,
+            "previous_rank": 90,
+            "current_points": "1269.79476",
+            "previous_points": "1257.64000",
+            "confederation": "CAF",
+            "api_id": 1519
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "UKR",
+        "fields": {
+            "name": "Ukraine",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/UKR",
+            "current_rank": 25,
+            "previous_rank": 24,
+            "current_points": "1552.36669",
+            "previous_points": "1548.29000",
+            "confederation": "UEFA",
+            "api_id": 772
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "URU",
+        "fields": {
+            "name": "Uruguay",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/URU",
+            "current_rank": 14,
+            "previous_rank": 11,
+            "current_points": "1680.36757",
+            "previous_points": "1701.34000",
+            "confederation": "CONMEBOL",
+            "api_id": 7
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "USA",
+        "fields": {
+            "name": "USA",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/USA",
+            "current_rank": 18,
+            "previous_rank": 18,
+            "current_points": "1630.96827",
+            "previous_points": "1632.19000",
+            "confederation": "CONCACAF",
+            "api_id": 2384
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "UZB",
+        "fields": {
+            "name": "Uzbekistan",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/UZB",
+            "current_rank": 58,
+            "previous_rank": 60,
+            "current_points": "1429.25967",
+            "previous_points": "1413.06000",
+            "confederation": "AFC",
+            "api_id": 1568
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VAN",
+        "fields": {
+            "name": "Vanuatu",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VAN",
+            "current_rank": 157,
+            "previous_rank": 162,
+            "current_points": "1015.51199",
+            "previous_points": "1005.49000",
+            "confederation": "OFC",
+            "api_id": 5170
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VEN",
+        "fields": {
+            "name": "Venezuela",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VEN",
+            "current_rank": 44,
+            "previous_rank": 40,
+            "current_points": "1482.46560",
+            "previous_points": "1488.56000",
+            "confederation": "CONMEBOL",
+            "api_id": 2379
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VGB",
+        "fields": {
+            "name": "British Virgin Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VGB",
+            "current_rank": 207,
+            "previous_rank": 208,
+            "current_points": "784.08525",
+            "previous_points": "790.63000",
+            "confederation": "CONCACAF",
+            "api_id": 8168
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VIE",
+        "fields": {
+            "name": "Vietnam",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VIE",
+            "current_rank": 119,
+            "previous_rank": 116,
+            "current_points": "1161.11296",
+            "previous_points": "1161.38000",
+            "confederation": "AFC",
+            "api_id": 1542
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VIN",
+        "fields": {
+            "name": "St Vincent and the Grenadines",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VIN",
+            "current_rank": 174,
+            "previous_rank": 174,
+            "current_points": "954.85496",
+            "previous_points": "945.80000",
+            "confederation": "CONCACAF",
+            "api_id": 5541
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "VIR",
+        "fields": {
+            "name": "US Virgin Islands",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/VIR",
+            "current_rank": 208,
+            "previous_rank": 207,
+            "current_points": "779.71486",
+            "previous_points": "792.15000",
+            "confederation": "CONCACAF",
+            "api_id": 8172
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "WAL",
+        "fields": {
+            "name": "Wales",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/WAL",
+            "current_rank": 29,
+            "previous_rank": 29,
+            "current_points": "1528.95984",
+            "previous_points": "1526.53000",
+            "confederation": "UEFA",
+            "api_id": 767
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "YEM",
+        "fields": {
+            "name": "Yemen",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/YEM",
+            "current_rank": 154,
+            "previous_rank": 155,
+            "current_points": "1021.24000",
+            "previous_points": "1021.24000",
+            "confederation": "AFC",
+            "api_id": 1962
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ZAM",
+        "fields": {
+            "name": "Zambia",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ZAM",
+            "current_rank": 94,
+            "previous_rank": 93,
+            "current_points": "1251.83760",
+            "previous_points": "1252.79000",
+            "confederation": "CAF",
+            "api_id": 1507
+        }
+    },
+    {
+        "model": "ranking.team",
+        "pk": "ZIM",
+        "fields": {
+            "name": "Zimbabwe",
+            "flag_url": "https://api.fifa.com/api/v3/picture/flags-sq-2/ZIM",
+            "current_rank": 117,
+            "previous_rank": 124,
+            "current_points": "1162.48525",
+            "previous_points": "1134.99000",
+            "confederation": "CAF",
+            "api_id": 1522
+        }
+    }
+]
