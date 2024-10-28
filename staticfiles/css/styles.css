@@ -1,0 +1,79 @@
+.blue-btn {
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    padding: 3px 6px;
+    background: #5F91FF;
+    border-radius: 5px;
+    line-height: 1;
+    width: 100px;
+}
+.blue-btn.selected { background: #1F51FF; }
+
+
+@media (max-width: 768px) {
+        /* Asosiy konteyner */
+        .col-lg-8 {
+          padding: 0 !important;
+        }
+        /* Konfederatsiya filtrlari */
+        .py-3 {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+        }
+        .py-3 a {
+          margin: 2px !important;
+          font-size: 0.8rem !important;
+          padding: 2px 4px !important;
+        }
+        /* Jadval */
+        .table {
+          font-size: 0.9rem !important;
+        }
+        .table td {
+          padding: 0.3rem !important;
+        }
+        /* Rank ustuni */
+        .table td:first-child {
+          padding-left: 0 !important;
+          width: 50px !important;
+        }
+        .table td:first-child span {
+          font-size: 0.8rem !important;
+          padding: 2px 4px !important;
+        }
+        /* Bayroq rasmlari */
+        .table td:nth-child(3) img {
+          width: 30px !important;
+          height: 20px !important;
+        }
+        /* Mamlakat nomi */
+        .table td:nth-child(4) span {
+          font-size: 0.85rem !important;
+        }
+        /* Ochkolar ustuni */
+        .table td:nth-child(5),
+        .table td:nth-child(6) {
+          font-size: 0.8rem !important;
+        }
+        /* Info tugmasi */
+        .table td:last-child {
+          padding-right: 0 !important;
+        }
+        .table td:last-child button {
+          font-size: 0.8rem !important;
+          padding: 0 !important;
+          width: 18px !important;
+          height: 18px !important;
+        }
+        /* Paginator */
+        .text-center.mb-4 {
+          margin-top: 1rem !important;
+        }
+        .text-center.mb-4 a {
+          font-size: 0.9rem !important;
+          padding: 2px 6px !important;
+        }
+      }

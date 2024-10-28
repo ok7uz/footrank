@@ -6,81 +6,15 @@
 {% endblock %}
 
 {% block meta-desc %}
-    Discover detailed live rankings and match results for {{ team.name }}. Follow {{ team.name }}'s journey with real-time updates on their latest performances, rankings, and upcoming fixtures.
+    {{ team.name }} live rankings and updates.
 {% endblock %}
 
 {% block og-title %}{{ team.name }} - Live Ranking and Matches{% endblock %}
-{% block og-description %}Discover detailed live rankings and match results for {{ team.name }}. Follow {{ team.name }}'s journey in the {{ conf }} confederation with real-time updates on their latest performances, rankings, and upcoming fixtures.{% endblock %}
+{% block og-description %}Track the latest performances of {{ team.name }}.{% endblock %}
+{% block og-image %}{{ team.flag_url }}{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
 {% block content %}
-    <style>
-      @media (max-width: 768px) {
-        /* Asosiy konteyner */
-        .col-lg-8 {
-          padding: 0 !important;
-        }
-        /* Konfederatsiya filtrlari */
-        .py-3 {
-          display: flex !important;
-          flex-wrap: wrap !important;
-          justify-content: center !important;
-        }
-        .py-3 a {
-          margin: 2px !important;
-          font-size: 0.8rem !important;
-          padding: 2px 4px !important;
-        }
-        /* Jadval */
-        .table {
-          font-size: 0.9rem !important;
-        }
-        .table td {
-          padding: 0.3rem !important;
-        }
-        /* Rank ustuni */
-        .table td:first-child {
-          padding-left: 0 !important;
-          width: 50px !important;
-        }
-        .table td:first-child span {
-          font-size: 0.8rem !important;
-          padding: 2px 4px !important;
-        }
-        /* Bayroq rasmlari */
-        .table td:nth-child(3) img {
-          width: 30px !important;
-          height: 20px !important;
-        }
-        /* Mamlakat nomi */
-        .table td:nth-child(4) span {
-          font-size: 0.85rem !important;
-        }
-        /* Ochkolar ustuni */
-        .table td:nth-child(5),
-        .table td:nth-child(6) {
-          font-size: 0.8rem !important;
-        }
-        /* Info tugmasi */
-        .table td:last-child {
-          padding-right: 0 !important;
-        }
-        .table td:last-child button {
-          font-size: 0.8rem !important;
-          padding: 0 !important;
-          width: 18px !important;
-          height: 18px !important;
-        }
-        /* Paginator */
-        .text-center.mb-4 {
-          margin-top: 1rem !important;
-        }
-        .text-center.mb-4 a {
-          font-size: 0.9rem !important;
-          padding: 2px 6px !important;
-        }
-      }
-    </style>
 
     <div class="col-lg-8 m-auto mt-5">
 
@@ -88,7 +22,9 @@
             style="color: #1F51FF">
             {{ team.name }}
         </h1>
-        <h2 class="text-center fw-normal fs-6">Live Ranking and Matches</h2>
+        <h2 class="text-center fw-normal fs-6">
+            Discover detailed live rankings and match results for {{ team.name }}. Follow {{ team.name }}'s journey with real-time updates on their latest performances, rankings, and upcoming fixtures.
+        </h2>
     <hr>
 
     <table class="table table-responsive table-hover table-striped">
@@ -176,17 +112,18 @@
                             <img src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
                                  style="border: 1px solid black; border-radius: 3px;"
+                                 alt="{{ game.home_team.name }}"
                                  width="33px"
                                  height="22px">
                         </td>
                         <td class="align-middle text-start col-3">
                             {{ game.home_team.name }}<br>
                             {% if game.home_points_change > 0 %}
-                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">
+                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0 5px;">
                                 +{{ game.home_points_change | floatformat:2 }}
                                 </span>
                         {% elif game.home_points_change < 0 %}
-                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0px 5px;">
+                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0 5px;">
                                 {{ game.home_points_change | floatformat:2 }}
                             </span>
                         {% endif %}
@@ -199,11 +136,11 @@
                         <td class="align-middle text-end col-3">
                         {{ game.away_team.name }}<br>
                             {% if game.away_points_change > 0 %}
-                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">
+                                <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0 5px;">
                                 +{{ game.away_points_change | floatformat:2 }}
                                 </span>
                         {% elif game.away_points_change < 0 %}
-                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0px 5px;">
+                                <span class="align-items-center small" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 0 5px;">
                                 {{ game.away_points_change | floatformat:2 }}
                             </span>
                         {% endif %}
@@ -212,6 +149,7 @@
                             <img src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
                                  style="border: 1px solid black; border-radius: 3px;"
+                                 alt="{{ game.away_team.name }}"
                                  width="33px"
                                  height="24px">
                         </td>

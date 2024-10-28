@@ -4,7 +4,6 @@ from pathlib import Path
 from celery.schedules import crontab
 from decouple import config
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
@@ -88,6 +87,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
