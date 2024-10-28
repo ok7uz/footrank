@@ -5,6 +5,14 @@
     {% if conf %}{{ conf }}{% else %}RankFoot.com{% endif %} - Live FIFA Rankings: Daily Updates
 {% endblock %}
 
+{% block meta-desc %}
+    {% if not conf %}
+        Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.
+    {% else %}
+        Explore the latest FIFA Men's Football Rankings for the {{ conf }} confederation. Track the performance of national teams within {{ conf }}, see real-time updates, and stay informed on rankings in {{ conf }}.
+    {% endif %}
+{% endblock %}
+
 {% block og-title %}RankFoot - Live FIFA Rankings: Daily Updates {% if conf %} - {{ conf }}{% endif %}{% endblock %}
 {% block og-description %}Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}

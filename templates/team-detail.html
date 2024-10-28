@@ -5,8 +5,12 @@
     {{ team.name }} - Live Ranking and Matches
 {% endblock %}
 
+{% block meta-desc %}
+    Discover detailed live rankings and match results for {{ team.name }}. Follow {{ team.name }}'s journey with real-time updates on their latest performances, rankings, and upcoming fixtures.
+{% endblock %}
+
 {% block og-title %}{{ team.name }} - Live Ranking and Matches{% endblock %}
-{% block og-description %}Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.{% endblock %}
+{% block og-description %}Discover detailed live rankings and match results for {{ team.name }}. Follow {{ team.name }}'s journey in the {{ conf }} confederation with real-time updates on their latest performances, rankings, and upcoming fixtures.{% endblock %}
 {% block og-url %}{{ request.build_absolute_uri }}{% endblock %}
 
 {% block content %}
