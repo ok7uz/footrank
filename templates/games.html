@@ -91,4 +91,60 @@
         {% endif %}
     </div>
 
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "National Teams: Match Scores",
+  "description": "Track the latest match results and updated points for each national team.",
+  "itemListElement": [
+    {% for game in games %}
+    {
+      "@type": "SportsEvent",
+      "name": "{{ game.home_team.name }} vs {{ game.away_team.name }}",
+      "startDate": "{{ game.date|date:'Y-m-d\\TH:i:s' }}",
+      "location": {
+        "@type": "Place",
+        "name": "{{ game.home_team.name }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ game.home_team.name }}",
+        }
+      },
+      "competitor": [
+        {
+          "@type": "SportsTeam",
+          "name": "{{ game.home_team.name }}",
+          "image": "{{ game.home_team.flag_url }}"
+        },
+        {
+          "@type": "SportsTeam",
+          "name": "{{ game.away_team.name }}",
+          "image": "{{ game.away_team.flag_url }}"
+        }
+      ],
+      "homeTeam": {
+        "@type": "SportsTeam",
+        "name": "{{ game.home_team.name }}",
+        "potentialAction": {
+          "@type": "UpdateAction",
+          "target": "+{{ game.home_points_change|floatformat:2 }}"
+        }
+      },
+      "awayTeam": {
+        "@type": "SportsTeam",
+        "name": "{{ game.away_team.name }}",
+        "potentialAction": {
+          "@type": "UpdateAction",
+          "target": "{{ game.away_points_change|floatformat:2 }}"
+        }
+      },
+      "result": "{{ game.home_goals }}-{{ game.away_goals }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+
 {% endblock %}

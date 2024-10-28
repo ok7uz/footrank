@@ -266,7 +266,7 @@
       "url": "{{ request.build_absolute_uri }}",
       "price": "0",
       "priceCurrency": "USD",
-      "validFrom": "{{ current_date }}",
+      "validFrom": "{% now 'Y-m-d' %}",
       "availability": "https://schema.org/InStock"
     }
   }
