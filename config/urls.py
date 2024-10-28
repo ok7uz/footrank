@@ -1,35 +1,10 @@
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.urls import path, include, reverse_lazy
-from django.views.generic import RedirectView
+from django.urls import path, include
 
 from apps.ranking.sitemaps import RankingSitemap, NavLinkSitemap, TeamSitemap
-
-
-class HomeView(RedirectView):
-    url = reverse_lazy('ranking')
-
-
-def custom_404_view(request, exception):
-    return render(request, '404.html', status=404)
-
-
-def robots_txt(request):
-    lines = [
-        'User-Agent: *',
-        'Disallow: /admin/',
-        'Allow: /\n',
-        'Sitemap: https://rankfoot.com/sitemap.xml'
-    ]
-    return HttpResponse('\n'.join(lines), content_type='text/plain')
-
-
-def ads_txt(request):
-    return HttpResponse('google.com, pub-7212047264593114, DIRECT, f08c47fec0942fa0')
-
+from config.main_views import HomeView, robots_txt, ads_txt
 
 sitemaps = {
     'ranking': RankingSitemap,
