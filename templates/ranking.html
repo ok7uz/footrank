@@ -2,12 +2,12 @@
 {% load cache %}
 
 {% block title %}
-    {{ conf | default:"RankFoot.com" }} - Live FIFA Rankings: Daily Updates
+    {{ conf | default:"RankFoot.com" }} - Live FIFA Rankings: Daily Updates {% if request.GET.page %}(Page {{ request.GET.page}}){% endif %}
 {% endblock %}
 
 {% block meta-desc %}
     {% if not conf %}
-        Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.
+        Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings. {% if request.GET.page %}(Page {{ request.GET.page}}){% endif %}
     {% else %}
         Explore the latest FIFA Men's Football Rankings for the {{ conf }} confederation. Track the performance of national teams within {{ conf }}, see real-time updates, and stay informed on rankings in {{ conf }}.
     {% endif %}
