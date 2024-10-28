@@ -125,8 +125,9 @@
                     <td class="align-middle py-1 col-1 text-end">
                         <img src="{{ ranking.team.flag_url }}"
                              alt="{{ ranking.team.name }}"
-                             class=""
-                             style="width: 36px; height: 24px; border: 1px solid black; background: #c5aa6a; border-radius: 3px"
+                             style="border: 1px solid black; background: #c5aa6a; border-radius: 3px"
+                             width="36px"
+                             height="24px"
                              loading="lazy">
                     </td>
                     <td class="col-5 align-middle">
@@ -170,7 +171,9 @@
                         <td class="align-middle col-1 py-0 ps-2">
                             <img src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
-                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                                 style="border: 1px solid black; border-radius: 3px;"
+                                 width="33px"
+                                 height="22px">
                         </td>
                         <td class="align-middle text-start col-3">
                             {{ game.home_team.name }}<br>
@@ -204,7 +207,9 @@
                         <td class="align-middle col-1 py-0 pe-2">
                             <img src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
-                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                                 style="border: 1px solid black; border-radius: 3px;"
+                                 width="33px"
+                                 height="24px">
                         </td>
                     </tr>
                 {% endfor %}

@@ -44,7 +44,9 @@
                         <td class="align-middle col-1 py-0 ps-2">
                             <img src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
-                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                                 style="border: 1px solid black; border-radius: 3px;"
+                                 width="33px"
+                                 height="22px">
                         </td>
                         <td class="align-middle text-start col-3">
                             {{ game.home_team.name }}<br>
@@ -78,7 +80,9 @@
                         <td class="align-middle col-1 py-0 pe-2">
                             <img src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
-                                 style="width: 33px; height: 22px; border: 1px solid black; border-radius: 3px;">
+                                 style="border: 1px solid black; border-radius: 3px;"
+                                 width="33px"
+                                 height="22px">
                         </td>
                     </tr>
                 {% endfor %}
