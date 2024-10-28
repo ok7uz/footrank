@@ -220,56 +220,58 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SportsEvent",
-  "name": "Live FIFA Rankings",
-  "description": "Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "startDate": "{{ current_date }}",
-  "endDate": "{{ current_date }}",
-  "location": {
-    "@type": "Place",
-    "name": "Global Football Stadium",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Worldwide"
-    }
-  },
-  "organizer": {
+  "@type": "SportsTeam",
+  "name": "{{ team.name }}",
+  "description": "Track {{ team.name }}'s live FIFA Men's Football Ranking, recent matches, and performance updates.",
+  "image": "{{ team.flag_url }}",
+  "url": "{{ request.build_absolute_uri }}",
+  "sport": "Football",
+  "memberOf": {
     "@type": "Organization",
     "name": "FIFA",
     "url": "https://www.fifa.com"
   },
-  "offers": {
-    "@type": "Offer",
-    "url": "{{ request.build_absolute_uri }}",
-    "price": "0",
-    "priceCurrency": "USD",
-    "validFrom": "{{ current_date }}",
-    "availability": "https://schema.org/InStock"
+  "ranking": {
+    "@type": "Place",
+    "name": "{{ ranking.current_rank }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "{{ team.name }}"
+    }
   },
-  "performer": [
-    {% for team in teams %}
-    {
-      "@type": "SportsTeam",
-      "name": "{{ team.name }}",
-      "image": "{{ team.flag_url }}",
-      "member": {
-        "name": "FIFA"
-      },
-      "ranking": {
-        "@type": "Place",
-        "name": "{{ team.current_rank }}",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "{{ team.name }}"
-        }
-      },
-      "points": "{{ team.current_points | floatformat:2 }}"
-    }{% if not forloop.last %},{% endif %}
-    {% endfor %}
-  ]
+  "points": "{{ ranking.current_points | floatformat:2 }}",
+  "event": {
+    "@type": "SportsEvent",
+    "name": "Live Ranking for {{ team.name }}",
+    "description": "Live updates on {{ team.name }}'s FIFA ranking and performance.",
+    "startDate": "{% now "Y-m-d" %}",
+    "endDate": "{% now "Y-m-d" %}",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Global Football Stadium",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Worldwide"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "FIFA",
+      "url": "https://www.fifa.com"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "{{ request.build_absolute_uri }}",
+      "price": "0",
+      "priceCurrency": "USD",
+      "validFrom": "{{ current_date }}",
+      "availability": "https://schema.org/InStock"
+    }
+  }
 }
 </script>
+
 
 {% endblock %}

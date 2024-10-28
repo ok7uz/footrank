@@ -196,8 +196,8 @@
   "description": "Stay updated with RankFoot's live FIFA Men's Football Rankings. Get daily updates on national team standings, track performance changes in real-time, and follow the latest movements in global football rankings.",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "eventStatus": "https://schema.org/EventScheduled",
-  "startDate": "{{ current_date }}",
-  "endDate": "{{ current_date }}",
+  "startDate": "{{ period.start_date | date:'Y-m-d' }}",
+  "endDate": "{{ period.end_date | date:'Y-m-d' }}",
   "location": {
     "@type": "Place",
     "name": "Global Football Stadium",
@@ -220,23 +220,23 @@
     "availability": "https://schema.org/InStock"
   },
   "performer": [
-    {% for team in teams %}
+    {% for ranking in rankings %}
     {
       "@type": "SportsTeam",
-      "name": "{{ team.name }}",
-      "image": "{{ team.flag_url }}",
+      "name": "{{ ranking.team.name }}",
+      "image": "{{ ranking.team.flag_url }}",
       "member": {
         "name": "FIFA"
       },
       "ranking": {
         "@type": "Place",
-        "name": "{{ team.current_rank }}",
+        "name": "{{ ranking.current_rank }}",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "{{ team.name }}"
+          "addressLocality": "{{ ranking.team.name }}"
         }
       },
-      "points": "{{ team.current_points | floatformat:2 }}"
+      "points": "{{ ranking.current_points | floatformat:2 }}"
     }{% if not forloop.last %},{% endif %}
     {% endfor %}
   ]
