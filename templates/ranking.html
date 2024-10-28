@@ -2,7 +2,7 @@
 {% load cache %}
 
 {% block title %}
-    {{ conf | default:"RankFoot.com" }} - Live FIFA Rankings: Daily Updates {% if request.GET.page %}(Page {{ request.GET.page}}){% endif %}
+    {{ conf | default:"RankFoot.com" }} - Live FIFA Team Rankings & Daily Updates {% if request.GET.page %}(Page {{ request.GET.page}}){% endif %}
 {% endblock %}
 
 {% block meta-desc %}
@@ -19,7 +19,9 @@
 
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
-        <h1 class="text-center fs-3"  style="color: #1F51FF">{% if conf %}<span class="fw-normal">{{ conf }} - </span>{% endif %}Live FIFA Rankings: Daily Updates</h1>
+        <h1 class="text-center fs-3"  style="color: #1F51FF">
+            {% if conf %}<span class="fw-normal">{{ conf }} Football - </span>{% endif %}FIFA Rankings: Updated Daily
+        </h1>
         <h2 class="text-center fw-normal fs-6">{% if conf %}Latest {{ conf }} Team Rankings: Updated Daily{% else %} Live FIFA Rankings: Real-Time Updates and Daily Changes{% endif %}</h2>
         <hr>
         <div class="col-lg-6 m-auto mb-4">
