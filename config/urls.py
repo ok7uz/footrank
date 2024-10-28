@@ -27,6 +27,10 @@ def robots_txt(request):
     return HttpResponse('\n'.join(lines), content_type='text/plain')
 
 
+def ads_txt(request):
+    return HttpResponse('google.com, pub-7212047264593114, DIRECT, f08c47fec0942fa0')
+
+
 sitemaps = {
     'ranking': RankingSitemap,
     'nav-links': NavLinkSitemap,
@@ -40,6 +44,7 @@ urlpatterns = [
     path('', include('apps.team.urls')),
     path('', include('apps.game.urls')),
     path('robots.txt', robots_txt),
+    path('ads.txt', ads_txt),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]
 
