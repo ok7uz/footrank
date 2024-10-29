@@ -5,4 +5,4 @@ from apps.team import models
 
 @admin.register(models.Team)
 class TeamAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ('name', )
