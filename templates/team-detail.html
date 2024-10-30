@@ -164,7 +164,7 @@
         {% endif %}
     </div>
 
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SportsTeam",
@@ -191,8 +191,8 @@
     "@type": "SportsEvent",
     "name": "Live Ranking for {{ team.name }}",
     "description": "Live updates on {{ team.name }}'s FIFA ranking and performance.",
-    "startDate": "{% now "Y-m-d" %}",
-    "endDate": "{% now "Y-m-d" %}",
+    "startDate": "{% now 'Y-m-d' %}",
+    "endDate": "{% now 'Y-m-d' %}",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -215,10 +215,14 @@
       "priceCurrency": "USD",
       "validFrom": "{% now 'Y-m-d' %}",
       "availability": "https://schema.org/InStock"
+    },
+    "performer": {
+      "@type": "SportsTeam",
+      "name": "{{ team.name }}",
+      "url": "{{ request.build_absolute_uri }}"
     }
   }
 }
 </script>
-
 
 {% endblock %}
