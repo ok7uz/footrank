@@ -17,12 +17,12 @@
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
     <h1 class="text-center fs-3">National Teams: Match Scores </h1>
-<h2 class="text-center fw-normal fs-6 text-secondary">Track the latest match results and updated points for each national team.</h2>
+<h2 class="text-center fw-bolder fs-6 text-secondary">Track the latest match results and updated points for each national team.</h2>
 <hr>
     <div class="col-lg-6 m-auto mb-4">
         <select name="period"
                 class="form-control text-center form-control-sm py-0"
-                style="font-size: 0.95rem; border: 1px solid #1F51FF"
+                style="font-size: 0.95rem; font-weight: 500; border: 1px solid #1F51FF"
                 onchange="location.href=`{% url "games" %}?period=${this.value}`">
             {% for per in periods %}
             <option value="{{ per.id }}"
@@ -48,9 +48,9 @@
                         <td class="align-middle col-1 py-0 ps-2">
                             <img src="{{ game.home_team.flag_url }}"
                                  loading="lazy"
-                                 style="border: 1px solid black; border-radius: 3px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;"
-                                 width="33px"
-                                 height="22px">
+                                 style="border: 1px solid black; border-radius: 3px; object-fit: cover"
+                                 width="32px"
+                                 height="24px">
                         </td>
                         <td class="align-middle text-start col-3">
                             {{ game.home_team.name }}<br>
@@ -84,9 +84,9 @@
                         <td class="align-middle col-1 py-0 pe-2">
                             <img src="{{ game.away_team.flag_url }}"
                                  loading="lazy"
-                                 style="border: 1px solid black; border-radius: 3px; object-fit: cover; box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;"
-                                 width="33px"
-                                 height="22px">
+                                 style="border: 1px solid black; border-radius: 3px; object-fit: cover;"
+                                 width="32px"
+                                 height="24px">
                         </td>
                     </tr>
                 {% endfor %}

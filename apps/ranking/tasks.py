@@ -56,7 +56,7 @@ def fetch_matches(date=None, is_finished=True, api_key=config('FOOTBALL_API_KEY1
 def fetch_fixtures(date=None):
     start_date = date or datetime.date.today()
 
-    for i in range(1, 8):
+    for i in range(1, 10):
         request_date = (start_date + datetime.timedelta(days=i)).strftime("%Y-%m-%d")
         fetch_matches(request_date, is_finished=False, api_key=config('FOOTBALL_API_KEY2'))
         time.sleep(5)
