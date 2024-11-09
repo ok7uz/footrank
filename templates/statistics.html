@@ -21,9 +21,9 @@
         <h2 class="text-center fw-normal fs-6">Top Movers, Fallers, and Points Changes in FIFA Rankings</h2>
         <hr>
     <select name="period"
-                class="form-control border-primary-subtle text-center form-control-sm"
-                style="font-size: 1.05rem"
-                onchange="location.href=`{% url "statistics" %}?period=${this.value}`">
+                class="form-control text-center form-control-sm py-0"
+                style="font-size: 0.95rem; font-weight: 400; border: 1px solid black"
+                onchange="location.href=`{% url "ranking" %}?period=${this.value}`">
             {% for per in periods %}
             <option value="{{ per.id }}"
                     {% if request.GET.period == per.id|stringformat:"s" or not request.GET.period and period.id|stringformat:"s" == per.id|stringformat:"s" %}selected="selected"{% endif %}>

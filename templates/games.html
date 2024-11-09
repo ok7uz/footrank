@@ -22,8 +22,8 @@
     <div class="col-lg-6 m-auto mb-4">
         <select name="period"
                 class="form-control text-center form-control-sm py-0"
-                style="font-size: 0.95rem; font-weight: 500; border: 1px solid #1F51FF"
-                onchange="location.href=`{% url "games" %}?period=${this.value}`">
+                style="font-size: 0.95rem; font-weight: 400; border: 1px solid black"
+                onchange="location.href=`{% url "ranking" %}?period=${this.value}`">
             {% for per in periods %}
             <option value="{{ per.id }}"
                     {% if request.GET.period == per.id|stringformat:"s" or not request.GET.period and period.id|stringformat:"s" == per.id|stringformat:"s" %}selected="selected"{% endif %}>
@@ -52,7 +52,7 @@
                                  width="32px"
                                  height="24px">
                         </td>
-                        <td class="align-middle text-start col-3">
+                        <td class="align-middle text-start col-3 fw-normal">
                             {{ game.home_team.name }}<br>
                             {% if game.home_points_change > 0 %}
                                 <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">
@@ -69,7 +69,7 @@
                             -
                             {{ game.away_goals }}
                         </td>
-                        <td class="align-middle text-end col-3">
+                        <td class="align-middle text-end col-3 fw-normal">
                         {{ game.away_team.name }}<br>
                             {% if game.away_points_change > 0 %}
                                 <span class="align-items-center small" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 0px 5px;">

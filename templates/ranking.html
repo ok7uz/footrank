@@ -19,15 +19,15 @@
 
 {% block content %}
     <div class="col-lg-8 m-auto mt-5">
-        <h1 class="text-center fs-3"  style="color: #1F51FF">
+        <h1 class="text-center fs-3">
             {% if conf %}<span class="fw-normal">{{ conf }} Football - </span>{% endif %}FIFA Rankings: Updated Daily
         </h1>
-        <h2 class="text-center fw-bolder fs-6">{% if conf %}Latest {{ conf }} Team Rankings: Updated Daily{% else %} Live FIFA Rankings: Real-Time Updates and Daily Changes{% endif %}</h2>
+        <h2 class="text-center fw-normal fs-6">{% if conf %}Latest {{ conf }} Team Rankings: Updated Daily{% else %} Live FIFA Rankings: Real-Time Updates and Daily Changes{% endif %}</h2>
         <hr>
         <div class="col-lg-6 m-auto mb-4">
         <select name="period"
                 class="form-control text-center form-control-sm py-0"
-                style="font-size: 0.95rem; font-weight: 500; border: 1px solid #1F51FF"
+                style="font-size: 0.95rem; font-weight: 400; border: 1px solid black"
                 onchange="location.href=`{% url "ranking" %}?period=${this.value}`">
             {% for per in periods %}
             <option value="{{ per.id }}"
@@ -71,7 +71,7 @@
                 {% for ranking in rankings %}
                 <tr onclick="location.href=`{% url 'team-detail' ranking.team.country_code %}`"
                     style="cursor: pointer;">
-                    <td class="col-1 text-center pe-0 align-middle small">
+                    <td class="col-1 text-center pe-0 align-middle small fw-normal">
                         {% if ranking.rank_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                     {{ ranking.rank_difference }} ↑
@@ -90,13 +90,13 @@
                     <td class="align-middle py-1 col-1 text-end">
                         <img src="{{ ranking.team.flag_url }}"
                              alt="{{ ranking.team.name }}"
-                             style="border: 1px solid black; background: #c5aa6a; border-radius: 3px; object-fit: cover"
+                             style="border: 1px solid black; border-radius: 3px; object-fit: cover"
                              loading="lazy"
                              width="36px"
                              height="27px">
                     </td>
                     <td class="col-5 align-middle">
-                        <span class="ms-2 align-items-center text-dark" style="font-size: 0.98rem">
+                        <span class="ms-2 fw-normal align-items-center text-dark" style="font-size: 0.98rem">
                              <a href="{% url 'team-detail' ranking.team.country_code %}"
                                 class="text-decoration-none text-black">
                             {{ ranking.team.name }}
@@ -107,7 +107,7 @@
                         style="font-size: 0.95rem; {% if team.points_difference != 0 %}font-weight: 400;{% endif %}">
                         {{ ranking.current_points | floatformat:2 }}
                     </td>
-                    <td class="py-1 col-2 align-middle small">
+                    <td class="py-1 col-2 align-middle small fw-normal">
                         {% if ranking.point_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
                                 +{{ ranking.point_difference | floatformat:2 }}
