@@ -1,1 +1,85 @@
-@font-face{font-family:RankFoot;src:url('/static/fonts/RankFoot-Regular.woff2') format('woff2');font-weight:400}@font-face{font-family:RankFoot;src:url('/static/fonts/RankFoot-Medium.woff2') format('woff2');font-weight:500}@font-face{font-family:RankFoot;src:url('/static/fonts/RankFoot-Bold.woff2') format('woff2');font-weight:600}.blue-btn{font-size:.95rem;text-decoration:none;font-weight:500;color:#fff;padding:3px 6px;background:#5f91ff;border-radius:5px;line-height:1;width:100px}.blue-btn.selected{background:#1f51ff}@media (max-width:768px){.py-3 a,.table td:first-child span{font-size:.8rem!important;padding:2px 4px!important}.col-lg-8{padding:0!important}.py-3{display:flex!important;flex-wrap:wrap!important;justify-content:center!important}.py-3 a{margin:2px!important}.table{font-size:.9rem!important}.table td{padding:.3rem!important}.table td:first-child{padding-left:0!important;width:50px!important}.table td:nth-child(3) img{width:30px!important;height:20px!important}.table td:nth-child(4) span{font-size:.85rem!important}.table td:nth-child(5),.table td:nth-child(6){font-size:.8rem!important}.table td:last-child{padding-right:0!important}.table td:last-child button{font-size:.8rem!important;padding:0!important;width:18px!important;height:18px!important}.text-center.mb-4{margin-top:1rem!important}.text-center.mb-4 a{font-size:.9rem!important;padding:2px 6px!important}}
+@font-face {
+  font-family: RankFoot;
+  src: url("/static/fonts/RankFoot-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: RankFoot;
+  src: url("/static/fonts/RankFoot-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: RankFoot;
+  src: url("/static/fonts/RankFoot-Bold.woff2") format("woff2");
+  font-weight: 600;
+}
+.blue-btn {
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #1f51ff;
+  padding: 3px 6px;
+  background: #dfe1ff;
+  border-radius: 5px;
+  line-height: 1;
+  width: 100px;
+}
+.blue-btn.selected {
+  background: #1f51ff;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .py-3 a,
+  .table td:first-child span {
+    font-size: 0.8rem !important;
+    padding: 2px 4px !important;
+  }
+  .col-lg-8 {
+    padding: 0 !important;
+  }
+  .py-3 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .py-3 a {
+    margin: 2px !important;
+  }
+  .table {
+    font-size: 0.9rem !important;
+  }
+  .table td {
+    padding: 0.3rem !important;
+  }
+  .table td:first-child {
+    padding-left: 0 !important;
+    width: 50px !important;
+  }
+  .table td:nth-child(3) img {
+    width: 30px !important;
+    height: 20px !important;
+  }
+  .table td:nth-child(4) span {
+    font-size: 0.85rem !important;
+  }
+  .table td:nth-child(5),
+  .table td:nth-child(6) {
+    font-size: 0.8rem !important;
+  }
+  .table td:last-child {
+    padding-right: 0 !important;
+  }
+  .table td:last-child button {
+    font-size: 0.8rem !important;
+    padding: 0 !important;
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .text-center.mb-4 {
+    margin-top: 1rem !important;
+  }
+  .text-center.mb-4 a {
+    font-size: 0.9rem !important;
+    padding: 2px 6px !important;
+  }
+}
