@@ -74,11 +74,11 @@
                     <td class="col-1 text-center pe-0 align-middle small fw-normal">
                         {% if ranking.rank_difference > 0 %}
                                 <span class="align-items-center" style="color: green; background: #DDFFDD; border: 1px solid green; border-radius: 20px; padding: 2px 5px;">
-                                    {{ ranking.rank_difference }} ↑
+                                    {{ ranking.rank_difference }} <i class="fa-solid fa-arrow-up"></i>
                                 </span>
                         {% elif team.rank_difference < 0 %}
                                 <span class="align-items-center" style="color: #DB0000; background: #FFEEEE; border: 1px solid #DB0000; border-radius: 20px; padding: 2px 5px;">
-                                    {{ ranking.rank_difference | stringformat:"d" | slice:"1:" }} ↓
+                                    {{ ranking.rank_difference | stringformat:"d" | slice:"1:" }} <i class="fa-solid fa-arrow-down"></i>
                                 </span>
                         {% endif %}
                     </td>
