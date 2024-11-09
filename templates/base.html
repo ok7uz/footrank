@@ -40,6 +40,61 @@
         gtag('js', new Date());
         gtag('config', 'G-F5MBHHTMTK');
     </script>
+
+<style>
+    .growth-indicator {
+    display: inline-flex;
+    animation: pulse 2s infinite;
+}
+
+.arrow {
+    margin-left: 5px;
+    font-size: 15px;
+    /* O'sish belgisi uchun animatsiya */
+    animation: bounce 0.5s infinite alternate;
+}
+
+.bordero {
+     animation: bordering 4s infinite alternate;
+}
+
+/* Nabz urishiga o'xshash animatsiya */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* O'sish belgisining sakrash animatsiyasi */
+@keyframes bounce {
+    0% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bordering {
+    0% {
+        border: 1px solid black;
+    }
+    90% {
+        border: 1px solid black;
+    }
+    100% {
+        border: 1px solid white;
+    }
+}
+
+
+</style>
 </head>
 <body class="bg-light container pt-4"
       style="font-family: 'Rubik', sans-serif; font-weight: 500; line-height: 1.1">
