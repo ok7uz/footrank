@@ -32,7 +32,8 @@ def fetch_matches(date=None, is_finished=True, api_key=config('FOOTBALL_API_KEY1
         away_team_data = fixture['teams']['away']
         home_goals = fixture['goals']['home']
         away_goals = fixture['goals']['away']
-        date = fixture['fixture']['date']
+        date_time = fixture['fixture']['date']
+        date = date_time[:10]
 
         home_team = Team.objects.filter(api_id=home_team_data['id']).first()
         away_team = Team.objects.filter(api_id=away_team_data['id']).first()
@@ -48,7 +49,7 @@ def fetch_matches(date=None, is_finished=True, api_key=config('FOOTBALL_API_KEY1
                 away_team=away_team,
                 home_goals=home_goals,
                 away_goals=away_goals,
-                date=date
+                date=date_time
             )
 
 
